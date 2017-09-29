@@ -1,1 +1,1 @@
-# Weizi.CRM
+# CRM
