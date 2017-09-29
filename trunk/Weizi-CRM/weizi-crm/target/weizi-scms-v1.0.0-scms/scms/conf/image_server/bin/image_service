@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case "$1" in
+   stop)
+     sudo /opt/app/nginx/sbin/nginx -s stop
+        ;;
+  start)
+       sudo /opt/app/nginx/sbin/nginx  -c /opt/app/image_server/conf/nginx/nginx.conf
+esac

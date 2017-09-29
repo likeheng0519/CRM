@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.UserPermissionDao" >
+    <resultMap id="user_permission_map" type="cn.com.conversant.weizi.crm.api.entity.UserPermission" >
+        <id column="id" property="id" />
+        <result column="project_metadata_id" property="project_metadata_id" />
+        <result column="user_id" property="user_id" />
+        <result column="created" property="created" />
+    </resultMap>
+    <sql id="table_column_list" >
+        id, project_metadata_id, user_id, created
+    </sql>
+
+    <insert id="addProjectUserPermission" parameterType="UserPermission" useGeneratedKeys="true" keyProperty="id">
+        insert into wz_project_user_permission(project_metadata_id, user_id, created)
+        values(#{project_metadata_id}, #{user_id}, now())
+    </insert>
+
+    <select id="getUserPermissionListByUserId" resultMap="user_permission_map" parameterType="java.lang.Long" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_user_permission
+        where user_id = #{userId}
+    </select>
+
+    <select id="getUserPermissionListAll" resultMap="user_permission_map">
+        select
+        <include refid="table_column_list" />
+        from wz_project_user_permission
+    </select>
+
+    <select id="getUserPermissionByUserIdAndMetadataId" resultMap="user_permission_map" parameterType="hashMap" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_user_permission
+        where project_metadata_id = #{metadataId}
+        AND user_id=#{userId}
+    </select>
+
+    <update id="updateUserPermission" parameterType="UserPermission" >
+        UPDATE wz_project_user_permission
+        SET project_metadata_id=#{project_metadata_id}, user_id=#{user_id}
+        where id = #{id}
+    </update>
+
+    <select id="getAllCustomerPermissionList" resultMap="user_permission_map" parameterType="java.lang.Long" >
+        select
+        p.id, p.project_metadata_id, p.user_id, p.created
+        from wz_project_user_permission p, wz_user u
+        where p.user_id = u.id
+        AND u.user_type!=0
+    </select>
+
+    <delete id="deleteUserPermissionByMetadataId" parameterType="java.lang.Long" >
+        DELETE
+        from wz_project_user_permission
+        where project_metadata_id = #{metadata_id}
+    </delete>
+
+    <delete id="deleteByUserIdAndMetadataId" parameterType="hashMap" >
+        DELETE
+        from wz_project_user_permission
+        where project_metadata_id = #{metadataId}
+        AND user_id=#{userId}
+    </delete>
+
+</mapper>

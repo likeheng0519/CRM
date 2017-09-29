@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- spring 注解扫描包 -->
+    <context:component-scan base-package="cn.com.conversant.weizi.crm" use-default-filters="true">
+        <context:exclude-filter expression="org.springframework.stereotype.Controller"
+                                type="annotation"/>
+    </context:component-scan>
+
+    <!-- 启动AOP支持 -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- 引入外部数据源配置信息 -->
+    <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:scms.properties</value>
+                <value>classpath*:scms_${project.env:local}.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 数据源使用连接池dbcp -->
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${scms.jdbc.url}"/>
+        <property name="username" value="${scms.jdbc.username}"/>
+        <property name="password" value="${scms.jdbc.password}"/>
+        <!--maxActive: 最大连接数量-->
+        <property name="maxActive" value="150"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="5"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="20"/>
+        <!--是否自动提交数据-->
+        <property name="defaultAutoCommit" value="false"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="30"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <!--removeAbandoned: 是否自动回收超时连接-->
+        <property name="removeAbandoned"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="10"/>
+        <!--maxWait: 超时等待时间以毫秒为单位 1000等于60秒-->
+        <property name="maxWait" value="1000"/>
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位. -->
+        <property name="timeBetweenEvictionRunsMillis" value="10000"/>
+        <!--  在每次空闲连接回收器线程(如果有)运行时检查的连接数量 -->
+        <property name="numTestsPerEvictionRun" value="10"/>
+        <!-- 1000 * 60 * 30  连接在池中保持空闲而不被空闲连接回收器线程-->
+        <property name="minEvictableIdleTimeMillis" value="10000"/>
+        <property name="validationQuery" value="SELECT 1"/>
+    </bean>
+
+    <!-- Mybatis 扫描DAO接口 -->
+    <bean id="simpleMapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.com.conversant.weizi.crm.api.dao"/>
+
+        <property name="annotationClass"
+                  value="cn.com.conversant.weizi.crm.commons.annotation.DataAccessRepository"/>
+    </bean>
+
+    <!-- 配置Session工厂 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 自动扫描需要定义类别名的包，将包内的JAVA类的类名作为类别名 -->
+        <property name="typeAliasesPackage" value="cn.com.conversant.weizi.crm.api.entity,cn.com.conversant.weizi.crm.cms.entity"></property>
+        <property name="mapperLocations">
+            <list>
+                <!--表示在包mapper所有文件-->
+                <value>classpath:/mapper/*.xml</value>
+            </list>
+        </property>
+        <property name="configurationProperties">
+            <props>
+                <prop key="dialect">postgresql</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 采用注解声明事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"
+                          proxy-target-class="true"/>
+
+    <import resource="weizi-crm-shiro.xml"/>
+</beans>

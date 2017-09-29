@@ -1,0 +1,32 @@
+server {
+    listen 80;
+    server_name imageserver.swiftsync.com.sg;
+    location / {
+        root   /opt/app/image_server;
+        index  index.html index.htm;
+    }
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+
+    location ~* "/image/(\w+)/(\w+)/(\w+)/((\w+)\.(png|jpg|gif|jpeg|bmp|tif|tiff|psd|ico))_(\d+|-)x(\d+|-)\.(png|jpg|gif|jpeg|bmp|tif|tiff|psd|ico)$" {
+                set $baseDir  /opt/app/image_server;
+                root  $baseDir;
+                 if (!-f $request_filename) {
+                 lua_code_cache off;
+		        set $storagePath  $baseDir/image;
+                set $requestFilePath $1/$2/$3;
+	            set $requestFileName $4;
+		         set $origExt $6;
+                set $width $7;
+                set $height $8;				
+                set $ext $9;
+                content_by_lua_file $baseDir/lua/default.lua;
+                
+                }  
+               
+              expires 30d;
+
+     }
+
+}
+

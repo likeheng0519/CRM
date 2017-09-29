@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+       <encoder>
+            <pattern>%d [%t] %-5p [%c] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SCMS_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Encoding>UTF-8</Encoding>
+        <Prudent>true</Prudent>
+        <encoder>
+            <pattern>%d [%t] %-5p [%c] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/%d{yyyy-MM-dd}/scms-trace.log
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="SCMS_ERROR"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Encoding>UTF-8</Encoding>
+        <Prudent>true</Prudent>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%d [%t] %-5p [%c] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/%d{yyyy-MM-dd}/scms-error.log
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+
+
+    <logger name="org.apache.http" level="DEBUG"/>
+    <logger name="org.apache" level="INFO"/>
+    <logger name="org.mybatis.spring" level="DEBUG"/>
+    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+    <logger name="org.springframework.core" level="INFO"/>
+    <logger name="org.apache.cxf" level="INFO"/>
+    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.springframework.beans" level="INFO"/>
+    <logger name="org.springframework.test" level="DEBUG"/>
+    <logger name="java.sql.Statement" level="DEBUG"/>
+    <logger name="com.google.code" level="OFF"/>
+    <logger name="org.quartz.core" level="OFF"/>
+    <logger name="org.springframework.jdbc" level="DEBUG"/>
+    <logger name="java.sql.ResultSet" level="INFO"/>
+    <logger name="org.mybatis" level="DEBUG"/>
+    <logger name="java.sql.Connection" level="DEBUG"/>
+    <logger name="cn.com.conversant" level="DEBUG"/>
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="SCMS_LOG"/>
+        <appender-ref ref="SCMS_ERROR"/>
+    </root>
+
+</configuration>

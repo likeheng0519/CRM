@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.ProjectMetadataDao" >
+    <resultMap id="wz_project_metadata_map" type="cn.com.conversant.weizi.crm.api.entity.ProjectMetadata" >
+        <id column="id" property="id" />
+        <id column="name" property="name" />
+        <id column="length" property="length" />
+        <id column="created" property="created" />
+        <id column="updated" property="updated" />
+        <id column="f1_title" property="f1_title" />
+        <id column="f2_title" property="f2_title" />
+        <id column="f3_title" property="f3_title" />
+        <id column="f4_title" property="f4_title" />
+        <id column="f5_title" property="f5_title" />
+        <id column="f6_title" property="f6_title" />
+        <id column="f7_title" property="f7_title" />
+        <id column="f8_title" property="f8_title" />
+        <id column="f9_title" property="f9_title" />
+        <id column="f10_title" property="f10_title" />
+        <id column="f11_title" property="f11_title" />
+        <id column="f12_title" property="f12_title" />
+        <id column="f13_title" property="f13_title" />
+        <id column="f14_title" property="f14_title" />
+        <id column="f15_title" property="f15_title" />
+        <id column="f16_title" property="f16_title" />
+        <id column="f17_title" property="f17_title" />
+        <id column="f18_title" property="f18_title" />
+        <id column="f19_title" property="f19_title" />
+        <id column="f20_title" property="f20_title" />
+        <id column="f21_title" property="f21_title" />
+        <id column="f22_title" property="f22_title" />
+        <id column="f23_title" property="f23_title" />
+        <id column="f24_title" property="f24_title" />
+        <id column="f25_title" property="f25_title" />
+        <id column="f26_title" property="f26_title" />
+        <id column="f27_title" property="f27_title" />
+        <id column="f28_title" property="f28_title" />
+        <id column="f29_title" property="f29_title" />
+        <id column="f30_title" property="f30_title" />
+        <id column="f31_title" property="f31_title" />
+        <id column="f32_title" property="f32_title" />
+        <id column="f33_title" property="f33_title" />
+        <id column="f34_title" property="f34_title" />
+        <id column="f35_title" property="f35_title" />
+        <id column="f36_title" property="f36_title" />
+        <id column="f37_title" property="f37_title" />
+        <id column="f38_title" property="f38_title" />
+        <id column="f39_title" property="f39_title" />
+        <id column="f40_title" property="f40_title" />
+        <id column="f41_title" property="f41_title" />
+        <id column="f42_title" property="f42_title" />
+        <id column="f43_title" property="f43_title" />
+        <id column="f44_title" property="f44_title" />
+        <id column="f45_title" property="f45_title" />
+        <id column="f46_title" property="f46_title" />
+        <id column="f47_title" property="f47_title" />
+        <id column="f48_title" property="f48_title" />
+        <id column="f49_title" property="f49_title" />
+        <id column="f50_title" property="f50_title" />
+        <id column="f51_title" property="f51_title" />
+        <id column="f52_title" property="f52_title" />
+        <id column="f53_title" property="f53_title" />
+        <id column="f54_title" property="f54_title" />
+        <id column="f55_title" property="f55_title" />
+        <id column="f56_title" property="f56_title" />
+        <id column="f57_title" property="f57_title" />
+        <id column="f58_title" property="f58_title" />
+        <id column="f59_title" property="f59_title" />
+        <id column="f60_title" property="f60_title" />
+        <id column="f61_title" property="f61_title" />
+        <id column="f62_title" property="f62_title" />
+        <id column="f63_title" property="f63_title" />
+        <id column="f64_title" property="f64_title" />
+        <id column="f65_title" property="f65_title" />
+        <id column="f66_title" property="f66_title" />
+        <id column="f67_title" property="f67_title" />
+        <id column="f68_title" property="f68_title" />
+        <id column="f69_title" property="f69_title" />
+        <id column="f70_title" property="f70_title" />
+        <id column="f71_title" property="f71_title" />
+        <id column="f72_title" property="f72_title" />
+        <id column="f73_title" property="f73_title" />
+        <id column="f74_title" property="f74_title" />
+        <id column="f75_title" property="f75_title" />
+        <id column="f76_title" property="f76_title" />
+        <id column="f77_title" property="f77_title" />
+        <id column="f78_title" property="f78_title" />
+        <id column="f79_title" property="f79_title" />
+        <id column="f80_title" property="f80_title" />
+        <id column="f81_title" property="f81_title" />
+        <id column="f82_title" property="f82_title" />
+        <id column="f83_title" property="f83_title" />
+        <id column="f84_title" property="f84_title" />
+        <id column="f85_title" property="f85_title" />
+        <id column="f86_title" property="f86_title" />
+        <id column="f87_title" property="f87_title" />
+        <id column="f88_title" property="f88_title" />
+        <id column="f89_title" property="f89_title" />
+        <id column="f90_title" property="f90_title" />
+        <id column="f91_title" property="f91_title" />
+        <id column="f92_title" property="f92_title" />
+        <id column="f93_title" property="f93_title" />
+        <id column="f94_title" property="f94_title" />
+        <id column="f95_title" property="f95_title" />
+        <id column="f96_title" property="f96_title" />
+        <id column="f97_title" property="f97_title" />
+        <id column="f98_title" property="f98_title" />
+        <id column="f99_title" property="f99_title" />
+        <id column="f100_title" property="f100_title" />
+        <id column="f101_title" property="f101_title" />
+        <id column="f102_title" property="f102_title" />
+        <id column="f103_title" property="f103_title" />
+        <id column="f104_title" property="f104_title" />
+        <id column="f105_title" property="f105_title" />
+        <id column="f106_title" property="f106_title" />
+        <id column="f107_title" property="f107_title" />
+        <id column="f108_title" property="f108_title" />
+        <id column="f109_title" property="f109_title" />
+        <id column="f110_title" property="f110_title" />
+        <id column="f111_title" property="f111_title" />
+        <id column="f112_title" property="f112_title" />
+        <id column="f113_title" property="f113_title" />
+        <id column="f114_title" property="f114_title" />
+        <id column="f115_title" property="f115_title" />
+        <id column="f116_title" property="f116_title" />
+        <id column="f117_title" property="f117_title" />
+        <id column="f118_title" property="f118_title" />
+        <id column="f119_title" property="f119_title" />
+        <id column="f120_title" property="f120_title" />
+        <id column="f121_title" property="f121_title" />
+        <id column="f122_title" property="f122_title" />
+        <id column="f123_title" property="f123_title" />
+        <id column="f124_title" property="f124_title" />
+        <id column="f125_title" property="f125_title" />
+        <id column="f126_title" property="f126_title" />
+        <id column="f127_title" property="f127_title" />
+        <id column="f128_title" property="f128_title" />
+        <id column="f129_title" property="f129_title" />
+        <id column="f130_title" property="f130_title" />
+        <id column="f131_title" property="f131_title" />
+        <id column="f132_title" property="f132_title" />
+        <id column="f133_title" property="f133_title" />
+        <id column="f134_title" property="f134_title" />
+        <id column="f135_title" property="f135_title" />
+        <id column="f136_title" property="f136_title" />
+        <id column="f137_title" property="f137_title" />
+        <id column="f138_title" property="f138_title" />
+        <id column="f139_title" property="f139_title" />
+        <id column="f140_title" property="f140_title" />
+        <id column="f141_title" property="f141_title" />
+        <id column="f142_title" property="f142_title" />
+        <id column="f143_title" property="f143_title" />
+        <id column="f144_title" property="f144_title" />
+        <id column="f145_title" property="f145_title" />
+        <id column="f146_title" property="f146_title" />
+        <id column="f147_title" property="f147_title" />
+        <id column="f148_title" property="f148_title" />
+        <id column="f149_title" property="f149_title" />
+        <id column="f150_title" property="f150_title" />
+    </resultMap>
+    <sql id="table_column_list" >
+        id,name,length,created,updated,
+        f1_title,f2_title,f3_title,f4_title,f5_title,
+        f6_title,f7_title,f8_title,f9_title,f10_title,
+        f11_title,f12_title,f13_title,f14_title,f15_title,
+        f16_title,f17_title,f18_title,f19_title,f20_title,
+        f21_title,f22_title,f23_title,f24_title,f25_title,
+        f26_title,f27_title,f28_title,f29_title,f30_title,
+        f31_title,f32_title,f33_title,f34_title,f35_title,
+        f36_title,f37_title,f38_title,f39_title,f40_title,
+        f41_title,f42_title,f43_title,f44_title,f45_title,
+        f46_title,f47_title,f48_title,f49_title,f50_title,
+        f51_title,f52_title,f53_title,f54_title,f55_title,
+        f56_title,f57_title,f58_title,f59_title,f60_title,
+        f61_title,f62_title,f63_title,f64_title,f65_title,
+        f66_title,f67_title,f68_title,f69_title,f70_title,
+        f71_title,f72_title,f73_title,f74_title,f75_title,
+        f76_title,f77_title,f78_title,f79_title,f80_title,
+        f81_title,f82_title,f83_title,f84_title,f85_title,
+        f86_title,f87_title,f88_title,f89_title,f90_title,
+        f91_title,f92_title,f93_title,f94_title,f95_title,
+        f96_title,f97_title,f98_title,f99_title,f100_title,
+        f101_title,f102_title,f103_title,f104_title,f105_title,
+        f106_title,f107_title,f108_title,f109_title,f110_title,
+        f111_title,f112_title,f113_title,f114_title,f115_title,
+        f116_title,f117_title,f118_title,f119_title,f120_title,
+        f121_title,f122_title,f123_title,f124_title,f125_title,
+        f126_title,f127_title,f128_title,f129_title,f130_title,
+        f131_title,f132_title,f133_title,f134_title,f135_title,
+        f136_title,f137_title,f138_title,f139_title,f140_title,
+        f141_title,f142_title,f143_title,f144_title,f145_title,
+        f146_title,f147_title,f148_title,f149_title,f150_title
+    </sql>
+
+    <select id="getMetadataListAll" resultMap="wz_project_metadata_map" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_metadata
+    </select>
+
+    <select id="getMetadataById" resultMap="wz_project_metadata_map" parameterType="java.lang.Long" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_metadata
+        where id = #{id}
+    </select>
+
+    <delete id="deleteMetadataById" parameterType="java.lang.Long">
+        DELETE
+        FROM wz_project_metadata
+        WHERE id = #{id}
+    </delete>
+
+    <select id="getCountByAllTitleAndName"  resultType="int" parameterType="ProjectMetadata" >
+        select
+          COUNT (1)
+        from wz_project_metadata
+        where
+        <if test="f1_title !=null and f1_title !=''">
+            f1_title=#{f1_title}
+        </if>
+        <if test="name !=null and name !=''">
+            AND name=#{name}
+        </if>
+        <if test="f2_title !=null and f2_title !=''">
+            AND f2_title=#{f2_title}
+        </if>
+        <if test="f3_title !=null and f3_title !=''">
+            AND f3_title=#{f3_title}
+        </if>
+        <if test="f4_title !=null and f4_title !=''">
+            AND f4_title=#{f4_title}
+        </if>
+        <if test="f5_title !=null and f5_title !=''">
+            AND f5_title=#{f5_title}
+        </if>
+        <if test="f6_title !=null and f6_title !=''">
+            AND f6_title=#{f6_title}
+        </if>
+        <if test="f7_title !=null and f7_title !=''">
+            AND f7_title=#{f7_title}
+        </if>
+        <if test="f8_title !=null and f8_title !=''">
+            AND f8_title=#{f8_title}
+        </if>
+        <if test="f9_title !=null and f9_title !=''">
+            AND f9_title=#{f9_title}
+        </if>
+        <if test="f10_title !=null and f10_title !=''">
+            AND f10_title=#{f10_title}
+        </if>
+        <if test="f11_title !=null and f11_title !=''">
+            AND f11_title=#{f11_title}
+        </if>
+        <if test="f12_title !=null and f12_title !=''">
+            AND f12_title=#{f12_title}
+        </if>
+        <if test="f13_title !=null and f13_title !=''">
+            AND f13_title=#{f13_title}
+        </if>
+        <if test="f14_title !=null and f14_title !=''">
+            AND f14_title=#{f14_title}
+        </if>
+        <if test="f15_title !=null and f15_title !=''">
+            AND f15_title=#{f15_title}
+        </if>
+        <if test="f16_title !=null and f16_title !=''">
+            AND f16_title=#{f16_title}
+        </if>
+        <if test="f17_title !=null and f17_title !=''">
+            AND f17_title=#{f17_title}
+        </if>
+        <if test="f18_title !=null and f18_title !=''">
+            AND f18_title=#{f18_title}
+        </if>
+        <if test="f19_title !=null and f19_title !=''">
+            AND f19_title=#{f19_title}
+        </if>
+        <if test="f20_title !=null and f20_title !=''">
+            AND f20_title=#{f20_title}
+        </if>
+        <if test="f21_title !=null and f21_title !=''">
+            AND f21_title=#{f21_title}
+        </if>
+        <if test="f22_title !=null and f22_title !=''">
+            AND f22_title=#{f22_title}
+        </if>
+        <if test="f23_title !=null and f23_title !=''">
+            AND f23_title=#{f23_title}
+        </if>
+        <if test="f24_title !=null and f24_title !=''">
+            AND f24_title=#{f24_title}
+        </if>
+        <if test="f25_title !=null and f25_title !=''">
+            AND f25_title=#{f25_title}
+        </if>
+        <if test="f26_title !=null and f26_title !=''">
+            AND f26_title=#{f26_title}
+        </if>
+        <if test="f27_title !=null and f27_title !=''">
+            AND f27_title=#{f27_title}
+        </if>
+        <if test="f28_title !=null and f28_title !=''">
+            AND f28_title=#{f28_title}
+        </if>
+        <if test="f29_title !=null and f29_title !=''">
+            AND f29_title=#{f29_title}
+        </if>
+        <if test="f30_title !=null and f30_title !=''">
+            AND f30_title=#{f30_title}
+        </if>
+        <if test="f31_title !=null and f31_title !=''">
+            AND f31_title=#{f31_title}
+        </if>
+        <if test="f32_title !=null and f32_title !=''">
+            AND f32_title=#{f32_title}
+        </if>
+        <if test="f33_title !=null and f33_title !=''">
+            AND f33_title=#{f33_title}
+        </if>
+        <if test="f34_title !=null and f34_title !=''">
+            AND f34_title=#{f34_title}
+        </if>
+        <if test="f35_title !=null and f35_title !=''">
+            AND f35_title=#{f35_title}
+        </if>
+        <if test="f36_title !=null and f36_title !=''">
+            AND f36_title=#{f36_title}
+        </if>
+        <if test="f37_title !=null and f37_title !=''">
+            AND f37_title=#{f37_title}
+        </if>
+        <if test="f38_title !=null and f38_title !=''">
+            AND f38_title=#{f38_title}
+        </if>
+        <if test="f39_title !=null and f39_title !=''">
+            AND f39_title=#{f39_title}
+        </if>
+        <if test="f40_title !=null and f40_title !=''">
+            AND f40_title=#{f40_title}
+        </if>
+        <if test="f41_title !=null and f41_title !=''">
+            AND f41_title=#{f41_title}
+        </if>
+        <if test="f42_title !=null and f42_title !=''">
+            AND f42_title=#{f42_title}
+        </if>
+        <if test="f43_title !=null and f43_title !=''">
+            AND f43_title=#{f43_title}
+        </if>
+        <if test="f44_title !=null and f44_title !=''">
+            AND f44_title=#{f44_title}
+        </if>
+        <if test="f45_title !=null and f45_title !=''">
+            AND f45_title=#{f45_title}
+        </if>
+        <if test="f46_title !=null and f46_title !=''">
+            AND f46_title=#{f46_title}
+        </if>
+        <if test="f47_title !=null and f47_title !=''">
+            AND f47_title=#{f47_title}
+        </if>
+        <if test="f48_title !=null and f48_title !=''">
+            AND f48_title=#{f48_title}
+        </if>
+        <if test="f49_title !=null and f49_title !=''">
+            AND f49_title=#{f49_title}
+        </if>
+        <if test="f50_title !=null and f50_title !=''">
+            AND f50_title=#{f50_title}
+        </if>
+        <if test="f51_title !=null and f51_title !=''">
+            AND f51_title=#{f51_title}
+        </if>
+        <if test="f52_title !=null and f52_title !=''">
+            AND f52_title=#{f52_title}
+        </if>
+        <if test="f53_title !=null and f53_title !=''">
+            AND f53_title=#{f53_title}
+        </if>
+        <if test="f54_title !=null and f54_title !=''">
+            AND f54_title=#{f54_title}
+        </if>
+        <if test="f55_title !=null and f55_title !=''">
+            AND f55_title=#{f55_title}
+        </if>
+        <if test="f56_title !=null and f56_title !=''">
+            AND f56_title=#{f56_title}
+        </if>
+        <if test="f57_title !=null and f57_title !=''">
+            AND f57_title=#{f57_title}
+        </if>
+        <if test="f58_title !=null and f58_title !=''">
+            AND f58_title=#{f58_title}
+        </if>
+        <if test="f59_title !=null and f59_title !=''">
+            AND f59_title=#{f59_title}
+        </if>
+        <if test="f60_title !=null and f60_title !=''">
+            AND f60_title=#{f60_title}
+        </if>
+        <if test="f61_title !=null and f61_title !=''">
+            AND f61_title=#{f61_title}
+        </if>
+        <if test="f62_title !=null and f62_title !=''">
+            AND f62_title=#{f62_title}
+        </if>
+        <if test="f63_title !=null and f63_title !=''">
+            AND f63_title=#{f63_title}
+        </if>
+        <if test="f64_title !=null and f64_title !=''">
+            AND f64_title=#{f64_title}
+        </if>
+        <if test="f65_title !=null and f65_title !=''">
+            AND f65_title=#{f65_title}
+        </if>
+        <if test="f66_title !=null and f66_title !=''">
+            AND f66_title=#{f66_title}
+        </if>
+        <if test="f67_title !=null and f67_title !=''">
+            AND f67_title=#{f67_title}
+        </if>
+        <if test="f68_title !=null and f68_title !=''">
+            AND f68_title=#{f68_title}
+        </if>
+        <if test="f69_title !=null and f69_title !=''">
+            AND f69_title=#{f69_title}
+        </if>
+        <if test="f70_title !=null and f70_title !=''">
+            AND f70_title=#{f70_title}
+        </if>
+        <if test="f71_title !=null and f71_title !=''">
+            AND f71_title=#{f71_title}
+        </if>
+        <if test="f72_title !=null and f72_title !=''">
+            AND f72_title=#{f72_title}
+        </if>
+        <if test="f73_title !=null and f73_title !=''">
+            AND f73_title=#{f73_title}
+        </if>
+        <if test="f74_title !=null and f74_title !=''">
+            AND f74_title=#{f74_title}
+        </if>
+        <if test="f75_title !=null and f75_title !=''">
+            AND f75_title=#{f75_title}
+        </if>
+        <if test="f76_title !=null and f76_title !=''">
+            AND f76_title=#{f76_title}
+        </if>
+        <if test="f77_title !=null and f77_title !=''">
+            AND f77_title=#{f77_title}
+        </if>
+        <if test="f78_title !=null and f78_title !=''">
+            AND f78_title=#{f78_title}
+        </if>
+        <if test="f79_title !=null and f79_title !=''">
+            AND f79_title=#{f79_title}
+        </if>
+        <if test="f80_title !=null and f80_title !=''">
+            AND f80_title=#{f80_title}
+        </if>
+        <if test="f81_title !=null and f81_title !=''">
+            AND f81_title=#{f81_title}
+        </if>
+        <if test="f82_title !=null and f82_title !=''">
+            AND f82_title=#{f82_title}
+        </if>
+        <if test="f83_title !=null and f83_title !=''">
+            AND f83_title=#{f83_title}
+        </if>
+        <if test="f84_title !=null and f84_title !=''">
+            AND f84_title=#{f84_title}
+        </if>
+        <if test="f85_title !=null and f85_title !=''">
+            AND f85_title=#{f85_title}
+        </if>
+        <if test="f86_title !=null and f86_title !=''">
+            AND f86_title=#{f86_title}
+        </if>
+        <if test="f87_title !=null and f87_title !=''">
+            AND f87_title=#{f87_title}
+        </if>
+        <if test="f88_title !=null and f88_title !=''">
+            AND f88_title=#{f88_title}
+        </if>
+        <if test="f89_title !=null and f89_title !=''">
+            AND f89_title=#{f89_title}
+        </if>
+        <if test="f90_title !=null and f90_title !=''">
+            AND f90_title=#{f90_title}
+        </if>
+        <if test="f91_title !=null and f91_title !=''">
+            AND f91_title=#{f91_title}
+        </if>
+        <if test="f92_title !=null and f92_title !=''">
+            AND f92_title=#{f92_title}
+        </if>
+        <if test="f93_title !=null and f93_title !=''">
+            AND f93_title=#{f93_title}
+        </if>
+        <if test="f94_title !=null and f94_title !=''">
+            AND f94_title=#{f94_title}
+        </if>
+        <if test="f95_title !=null and f95_title !=''">
+            AND f95_title=#{f95_title}
+        </if>
+        <if test="f96_title !=null and f96_title !=''">
+            AND f96_title=#{f96_title}
+        </if>
+        <if test="f97_title !=null and f97_title !=''">
+            AND f97_title=#{f97_title}
+        </if>
+        <if test="f98_title !=null and f98_title !=''">
+            AND f98_title=#{f98_title}
+        </if>
+        <if test="f99_title !=null and f99_title !=''">
+            AND f99_title=#{f99_title}
+        </if>
+        <if test="f100_title !=null and f100_title !=''">
+            AND f100_title=#{f100_title}
+        </if>
+        <if test="f101_title !=null and f101_title !=''">
+            AND f101_title=#{f101_title}
+        </if>
+        <if test="f102_title !=null and f102_title !=''">
+            AND f102_title=#{f102_title}
+        </if>
+        <if test="f103_title !=null and f103_title !=''">
+            AND f103_title=#{f103_title}
+        </if>
+        <if test="f104_title !=null and f104_title !=''">
+            AND f104_title=#{f104_title}
+        </if>
+        <if test="f105_title !=null and f105_title !=''">
+            AND f105_title=#{f105_title}
+        </if>
+        <if test="f106_title !=null and f106_title !=''">
+            AND f106_title=#{f106_title}
+        </if>
+        <if test="f107_title !=null and f107_title !=''">
+            AND f107_title=#{f107_title}
+        </if>
+        <if test="f108_title !=null and f108_title !=''">
+            AND f108_title=#{f108_title}
+        </if>
+        <if test="f109_title !=null and f109_title !=''">
+            AND f109_title=#{f109_title}
+        </if>
+        <if test="f110_title !=null and f110_title !=''">
+            AND f110_title=#{f110_title}
+        </if>
+        <if test="f111_title !=null and f111_title !=''">
+            AND f111_title=#{f111_title}
+        </if>
+        <if test="f112_title !=null and f112_title !=''">
+            AND f112_title=#{f112_title}
+        </if>
+        <if test="f113_title !=null and f113_title !=''">
+            AND f113_title=#{f113_title}
+        </if>
+        <if test="f114_title !=null and f114_title !=''">
+            AND f114_title=#{f114_title}
+        </if>
+        <if test="f115_title !=null and f115_title !=''">
+            AND f115_title=#{f115_title}
+        </if>
+        <if test="f116_title !=null and f116_title !=''">
+            AND f116_title=#{f116_title}
+        </if>
+        <if test="f117_title !=null and f117_title !=''">
+            AND f117_title=#{f117_title}
+        </if>
+        <if test="f118_title !=null and f118_title !=''">
+            AND f118_title=#{f118_title}
+        </if>
+        <if test="f119_title !=null and f119_title !=''">
+            AND f119_title=#{f119_title}
+        </if>
+        <if test="f120_title !=null and f120_title !=''">
+            AND f120_title=#{f120_title}
+        </if>
+        <if test="f121_title !=null and f121_title !=''">
+            AND f121_title=#{f121_title}
+        </if>
+        <if test="f122_title !=null and f122_title !=''">
+            AND f122_title=#{f122_title}
+        </if>
+        <if test="f123_title !=null and f123_title !=''">
+            AND f123_title=#{f123_title}
+        </if>
+        <if test="f124_title !=null and f124_title !=''">
+            AND f124_title=#{f124_title}
+        </if>
+        <if test="f125_title !=null and f125_title !=''">
+            AND f125_title=#{f125_title}
+        </if>
+        <if test="f126_title !=null and f126_title !=''">
+            AND f126_title=#{f126_title}
+        </if>
+        <if test="f127_title !=null and f127_title !=''">
+            AND f127_title=#{f127_title}
+        </if>
+        <if test="f128_title !=null and f128_title !=''">
+            AND f128_title=#{f128_title}
+        </if>
+        <if test="f129_title !=null and f129_title !=''">
+            AND f129_title=#{f129_title}
+        </if>
+        <if test="f130_title !=null and f130_title !=''">
+            AND f130_title=#{f130_title}
+        </if>
+        <if test="f131_title !=null and f131_title !=''">
+            AND f131_title=#{f131_title}
+        </if>
+        <if test="f132_title !=null and f132_title !=''">
+            AND f132_title=#{f132_title}
+        </if>
+        <if test="f133_title !=null and f133_title !=''">
+            AND f133_title=#{f133_title}
+        </if>
+        <if test="f134_title !=null and f134_title !=''">
+            AND f134_title=#{f134_title}
+        </if>
+        <if test="f135_title !=null and f135_title !=''">
+            AND f135_title=#{f135_title}
+        </if>
+        <if test="f136_title !=null and f136_title !=''">
+            AND f136_title=#{f136_title}
+        </if>
+        <if test="f137_title !=null and f137_title !=''">
+            AND f137_title=#{f137_title}
+        </if>
+        <if test="f138_title !=null and f138_title !=''">
+            AND f138_title=#{f138_title}
+        </if>
+        <if test="f139_title !=null and f139_title !=''">
+            AND f139_title=#{f139_title}
+        </if>
+        <if test="f140_title !=null and f140_title !=''">
+            AND f140_title=#{f140_title}
+        </if>
+        <if test="f141_title !=null and f141_title !=''">
+            AND f141_title=#{f141_title}
+        </if>
+        <if test="f142_title !=null and f142_title !=''">
+            AND f142_title=#{f142_title}
+        </if>
+        <if test="f143_title !=null and f143_title !=''">
+            AND f143_title=#{f143_title}
+        </if>
+        <if test="f144_title !=null and f144_title !=''">
+            AND f144_title=#{f144_title}
+        </if>
+        <if test="f145_title !=null and f145_title !=''">
+            AND f145_title=#{f145_title}
+        </if>
+        <if test="f146_title !=null and f146_title !=''">
+            AND f146_title=#{f146_title}
+        </if>
+        <if test="f147_title !=null and f147_title !=''">
+            AND f147_title=#{f147_title}
+        </if>
+        <if test="f148_title !=null and f148_title !=''">
+            AND f148_title=#{f148_title}
+        </if>
+        <if test="f149_title !=null and f149_title !=''">
+            AND f149_title=#{f149_title}
+        </if>
+        <if test="f150_title !=null and f150_title !=''">
+            AND f150_title=#{f150_title}
+        </if>
+
+    </select>
+
+    <select id="getMetadataByAllTitleAndName"  resultType="ProjectMetadata" parameterType="ProjectMetadata" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_metadata
+        where
+        <if test="id > 0">
+            id=#{id}
+        </if>
+        <if test="name !=null and name !=''">
+            AND name=#{name}
+        </if>
+        <if test="f1_title !=null and f1_title !=''">
+            AND f1_title=#{f1_title}
+        </if>
+        <if test="f2_title !=null and f2_title !=''">
+            AND f2_title=#{f2_title}
+        </if>
+        <if test="f3_title !=null and f3_title !=''">
+            AND f3_title=#{f3_title}
+        </if>
+        <if test="f4_title !=null and f4_title !=''">
+            AND f4_title=#{f4_title}
+        </if>
+        <if test="f5_title !=null and f5_title !=''">
+            AND f5_title=#{f5_title}
+        </if>
+        <if test="f6_title !=null and f6_title !=''">
+            AND f6_title=#{f6_title}
+        </if>
+        <if test="f7_title !=null and f7_title !=''">
+            AND f7_title=#{f7_title}
+        </if>
+        <if test="f8_title !=null and f8_title !=''">
+            AND f8_title=#{f8_title}
+        </if>
+        <if test="f9_title !=null and f9_title !=''">
+            AND f9_title=#{f9_title}
+        </if>
+        <if test="f10_title !=null and f10_title !=''">
+            AND f10_title=#{f10_title}
+        </if>
+        <if test="f11_title !=null and f11_title !=''">
+            AND f11_title=#{f11_title}
+        </if>
+        <if test="f12_title !=null and f12_title !=''">
+            AND f12_title=#{f12_title}
+        </if>
+        <if test="f13_title !=null and f13_title !=''">
+            AND f13_title=#{f13_title}
+        </if>
+        <if test="f14_title !=null and f14_title !=''">
+            AND f14_title=#{f14_title}
+        </if>
+        <if test="f15_title !=null and f15_title !=''">
+            AND f15_title=#{f15_title}
+        </if>
+        <if test="f16_title !=null and f16_title !=''">
+            AND f16_title=#{f16_title}
+        </if>
+        <if test="f17_title !=null and f17_title !=''">
+            AND f17_title=#{f17_title}
+        </if>
+        <if test="f18_title !=null and f18_title !=''">
+            AND f18_title=#{f18_title}
+        </if>
+        <if test="f19_title !=null and f19_title !=''">
+            AND f19_title=#{f19_title}
+        </if>
+        <if test="f20_title !=null and f20_title !=''">
+            AND f20_title=#{f20_title}
+        </if>
+        <if test="f21_title !=null and f21_title !=''">
+            AND f21_title=#{f21_title}
+        </if>
+        <if test="f22_title !=null and f22_title !=''">
+            AND f22_title=#{f22_title}
+        </if>
+        <if test="f23_title !=null and f23_title !=''">
+            AND f23_title=#{f23_title}
+        </if>
+        <if test="f24_title !=null and f24_title !=''">
+            AND f24_title=#{f24_title}
+        </if>
+        <if test="f25_title !=null and f25_title !=''">
+            AND f25_title=#{f25_title}
+        </if>
+        <if test="f26_title !=null and f26_title !=''">
+            AND f26_title=#{f26_title}
+        </if>
+        <if test="f27_title !=null and f27_title !=''">
+            AND f27_title=#{f27_title}
+        </if>
+        <if test="f28_title !=null and f28_title !=''">
+            AND f28_title=#{f28_title}
+        </if>
+        <if test="f29_title !=null and f29_title !=''">
+            AND f29_title=#{f29_title}
+        </if>
+        <if test="f30_title !=null and f30_title !=''">
+            AND f30_title=#{f30_title}
+        </if>
+        <if test="f31_title !=null and f31_title !=''">
+            AND f31_title=#{f31_title}
+        </if>
+        <if test="f32_title !=null and f32_title !=''">
+            AND f32_title=#{f32_title}
+        </if>
+        <if test="f33_title !=null and f33_title !=''">
+            AND f33_title=#{f33_title}
+        </if>
+        <if test="f34_title !=null and f34_title !=''">
+            AND f34_title=#{f34_title}
+        </if>
+        <if test="f35_title !=null and f35_title !=''">
+            AND f35_title=#{f35_title}
+        </if>
+        <if test="f36_title !=null and f36_title !=''">
+            AND f36_title=#{f36_title}
+        </if>
+        <if test="f37_title !=null and f37_title !=''">
+            AND f37_title=#{f37_title}
+        </if>
+        <if test="f38_title !=null and f38_title !=''">
+            AND f38_title=#{f38_title}
+        </if>
+        <if test="f39_title !=null and f39_title !=''">
+            AND f39_title=#{f39_title}
+        </if>
+        <if test="f40_title !=null and f40_title !=''">
+            AND f40_title=#{f40_title}
+        </if>
+        <if test="f41_title !=null and f41_title !=''">
+            AND f41_title=#{f41_title}
+        </if>
+        <if test="f42_title !=null and f42_title !=''">
+            AND f42_title=#{f42_title}
+        </if>
+        <if test="f43_title !=null and f43_title !=''">
+            AND f43_title=#{f43_title}
+        </if>
+        <if test="f44_title !=null and f44_title !=''">
+            AND f44_title=#{f44_title}
+        </if>
+        <if test="f45_title !=null and f45_title !=''">
+            AND f45_title=#{f45_title}
+        </if>
+        <if test="f46_title !=null and f46_title !=''">
+            AND f46_title=#{f46_title}
+        </if>
+        <if test="f47_title !=null and f47_title !=''">
+            AND f47_title=#{f47_title}
+        </if>
+        <if test="f48_title !=null and f48_title !=''">
+            AND f48_title=#{f48_title}
+        </if>
+        <if test="f49_title !=null and f49_title !=''">
+            AND f49_title=#{f49_title}
+        </if>
+        <if test="f50_title !=null and f50_title !=''">
+            AND f50_title=#{f50_title}
+        </if>
+        <if test="f51_title !=null and f51_title !=''">
+            AND f51_title=#{f51_title}
+        </if>
+        <if test="f52_title !=null and f52_title !=''">
+            AND f52_title=#{f52_title}
+        </if>
+        <if test="f53_title !=null and f53_title !=''">
+            AND f53_title=#{f53_title}
+        </if>
+        <if test="f54_title !=null and f54_title !=''">
+            AND f54_title=#{f54_title}
+        </if>
+        <if test="f55_title !=null and f55_title !=''">
+            AND f55_title=#{f55_title}
+        </if>
+        <if test="f56_title !=null and f56_title !=''">
+            AND f56_title=#{f56_title}
+        </if>
+        <if test="f57_title !=null and f57_title !=''">
+            AND f57_title=#{f57_title}
+        </if>
+        <if test="f58_title !=null and f58_title !=''">
+            AND f58_title=#{f58_title}
+        </if>
+        <if test="f59_title !=null and f59_title !=''">
+            AND f59_title=#{f59_title}
+        </if>
+        <if test="f60_title !=null and f60_title !=''">
+            AND f60_title=#{f60_title}
+        </if>
+        <if test="f61_title !=null and f61_title !=''">
+            AND f61_title=#{f61_title}
+        </if>
+        <if test="f62_title !=null and f62_title !=''">
+            AND f62_title=#{f62_title}
+        </if>
+        <if test="f63_title !=null and f63_title !=''">
+            AND f63_title=#{f63_title}
+        </if>
+        <if test="f64_title !=null and f64_title !=''">
+            AND f64_title=#{f64_title}
+        </if>
+        <if test="f65_title !=null and f65_title !=''">
+            AND f65_title=#{f65_title}
+        </if>
+        <if test="f66_title !=null and f66_title !=''">
+            AND f66_title=#{f66_title}
+        </if>
+        <if test="f67_title !=null and f67_title !=''">
+            AND f67_title=#{f67_title}
+        </if>
+        <if test="f68_title !=null and f68_title !=''">
+            AND f68_title=#{f68_title}
+        </if>
+        <if test="f69_title !=null and f69_title !=''">
+            AND f69_title=#{f69_title}
+        </if>
+        <if test="f70_title !=null and f70_title !=''">
+            AND f70_title=#{f70_title}
+        </if>
+        <if test="f71_title !=null and f71_title !=''">
+            AND f71_title=#{f71_title}
+        </if>
+        <if test="f72_title !=null and f72_title !=''">
+            AND f72_title=#{f72_title}
+        </if>
+        <if test="f73_title !=null and f73_title !=''">
+            AND f73_title=#{f73_title}
+        </if>
+        <if test="f74_title !=null and f74_title !=''">
+            AND f74_title=#{f74_title}
+        </if>
+        <if test="f75_title !=null and f75_title !=''">
+            AND f75_title=#{f75_title}
+        </if>
+        <if test="f76_title !=null and f76_title !=''">
+            AND f76_title=#{f76_title}
+        </if>
+        <if test="f77_title !=null and f77_title !=''">
+            AND f77_title=#{f77_title}
+        </if>
+        <if test="f78_title !=null and f78_title !=''">
+            AND f78_title=#{f78_title}
+        </if>
+        <if test="f79_title !=null and f79_title !=''">
+            AND f79_title=#{f79_title}
+        </if>
+        <if test="f80_title !=null and f80_title !=''">
+            AND f80_title=#{f80_title}
+        </if>
+        <if test="f81_title !=null and f81_title !=''">
+            AND f81_title=#{f81_title}
+        </if>
+        <if test="f82_title !=null and f82_title !=''">
+            AND f82_title=#{f82_title}
+        </if>
+        <if test="f83_title !=null and f83_title !=''">
+            AND f83_title=#{f83_title}
+        </if>
+        <if test="f84_title !=null and f84_title !=''">
+            AND f84_title=#{f84_title}
+        </if>
+        <if test="f85_title !=null and f85_title !=''">
+            AND f85_title=#{f85_title}
+        </if>
+        <if test="f86_title !=null and f86_title !=''">
+            AND f86_title=#{f86_title}
+        </if>
+        <if test="f87_title !=null and f87_title !=''">
+            AND f87_title=#{f87_title}
+        </if>
+        <if test="f88_title !=null and f88_title !=''">
+            AND f88_title=#{f88_title}
+        </if>
+        <if test="f89_title !=null and f89_title !=''">
+            AND f89_title=#{f89_title}
+        </if>
+        <if test="f90_title !=null and f90_title !=''">
+            AND f90_title=#{f90_title}
+        </if>
+        <if test="f91_title !=null and f91_title !=''">
+            AND f91_title=#{f91_title}
+        </if>
+        <if test="f92_title !=null and f92_title !=''">
+            AND f92_title=#{f92_title}
+        </if>
+        <if test="f93_title !=null and f93_title !=''">
+            AND f93_title=#{f93_title}
+        </if>
+        <if test="f94_title !=null and f94_title !=''">
+            AND f94_title=#{f94_title}
+        </if>
+        <if test="f95_title !=null and f95_title !=''">
+            AND f95_title=#{f95_title}
+        </if>
+        <if test="f96_title !=null and f96_title !=''">
+            AND f96_title=#{f96_title}
+        </if>
+        <if test="f97_title !=null and f97_title !=''">
+            AND f97_title=#{f97_title}
+        </if>
+        <if test="f98_title !=null and f98_title !=''">
+            AND f98_title=#{f98_title}
+        </if>
+        <if test="f99_title !=null and f99_title !=''">
+            AND f99_title=#{f99_title}
+        </if>
+        <if test="f100_title !=null and f100_title !=''">
+            AND f100_title=#{f100_title}
+        </if>
+        <if test="f101_title !=null and f101_title !=''">
+            AND f101_title=#{f101_title}
+        </if>
+        <if test="f102_title !=null and f102_title !=''">
+            AND f102_title=#{f102_title}
+        </if>
+        <if test="f103_title !=null and f103_title !=''">
+            AND f103_title=#{f103_title}
+        </if>
+        <if test="f104_title !=null and f104_title !=''">
+            AND f104_title=#{f104_title}
+        </if>
+        <if test="f105_title !=null and f105_title !=''">
+            AND f105_title=#{f105_title}
+        </if>
+        <if test="f106_title !=null and f106_title !=''">
+            AND f106_title=#{f106_title}
+        </if>
+        <if test="f107_title !=null and f107_title !=''">
+            AND f107_title=#{f107_title}
+        </if>
+        <if test="f108_title !=null and f108_title !=''">
+            AND f108_title=#{f108_title}
+        </if>
+        <if test="f109_title !=null and f109_title !=''">
+            AND f109_title=#{f109_title}
+        </if>
+        <if test="f110_title !=null and f110_title !=''">
+            AND f110_title=#{f110_title}
+        </if>
+        <if test="f111_title !=null and f111_title !=''">
+            AND f111_title=#{f111_title}
+        </if>
+        <if test="f112_title !=null and f112_title !=''">
+            AND f112_title=#{f112_title}
+        </if>
+        <if test="f113_title !=null and f113_title !=''">
+            AND f113_title=#{f113_title}
+        </if>
+        <if test="f114_title !=null and f114_title !=''">
+            AND f114_title=#{f114_title}
+        </if>
+        <if test="f115_title !=null and f115_title !=''">
+            AND f115_title=#{f115_title}
+        </if>
+        <if test="f116_title !=null and f116_title !=''">
+            AND f116_title=#{f116_title}
+        </if>
+        <if test="f117_title !=null and f117_title !=''">
+            AND f117_title=#{f117_title}
+        </if>
+        <if test="f118_title !=null and f118_title !=''">
+            AND f118_title=#{f118_title}
+        </if>
+        <if test="f119_title !=null and f119_title !=''">
+            AND f119_title=#{f119_title}
+        </if>
+        <if test="f120_title !=null and f120_title !=''">
+            AND f120_title=#{f120_title}
+        </if>
+        <if test="f121_title !=null and f121_title !=''">
+            AND f121_title=#{f121_title}
+        </if>
+        <if test="f122_title !=null and f122_title !=''">
+            AND f122_title=#{f122_title}
+        </if>
+        <if test="f123_title !=null and f123_title !=''">
+            AND f123_title=#{f123_title}
+        </if>
+        <if test="f124_title !=null and f124_title !=''">
+            AND f124_title=#{f124_title}
+        </if>
+        <if test="f125_title !=null and f125_title !=''">
+            AND f125_title=#{f125_title}
+        </if>
+        <if test="f126_title !=null and f126_title !=''">
+            AND f126_title=#{f126_title}
+        </if>
+        <if test="f127_title !=null and f127_title !=''">
+            AND f127_title=#{f127_title}
+        </if>
+        <if test="f128_title !=null and f128_title !=''">
+            AND f128_title=#{f128_title}
+        </if>
+        <if test="f129_title !=null and f129_title !=''">
+            AND f129_title=#{f129_title}
+        </if>
+        <if test="f130_title !=null and f130_title !=''">
+            AND f130_title=#{f130_title}
+        </if>
+        <if test="f131_title !=null and f131_title !=''">
+            AND f131_title=#{f131_title}
+        </if>
+        <if test="f132_title !=null and f132_title !=''">
+            AND f132_title=#{f132_title}
+        </if>
+        <if test="f133_title !=null and f133_title !=''">
+            AND f133_title=#{f133_title}
+        </if>
+        <if test="f134_title !=null and f134_title !=''">
+            AND f134_title=#{f134_title}
+        </if>
+        <if test="f135_title !=null and f135_title !=''">
+            AND f135_title=#{f135_title}
+        </if>
+        <if test="f136_title !=null and f136_title !=''">
+            AND f136_title=#{f136_title}
+        </if>
+        <if test="f137_title !=null and f137_title !=''">
+            AND f137_title=#{f137_title}
+        </if>
+        <if test="f138_title !=null and f138_title !=''">
+            AND f138_title=#{f138_title}
+        </if>
+        <if test="f139_title !=null and f139_title !=''">
+            AND f139_title=#{f139_title}
+        </if>
+        <if test="f140_title !=null and f140_title !=''">
+            AND f140_title=#{f140_title}
+        </if>
+        <if test="f141_title !=null and f141_title !=''">
+            AND f141_title=#{f141_title}
+        </if>
+        <if test="f142_title !=null and f142_title !=''">
+            AND f142_title=#{f142_title}
+        </if>
+        <if test="f143_title !=null and f143_title !=''">
+            AND f143_title=#{f143_title}
+        </if>
+        <if test="f144_title !=null and f144_title !=''">
+            AND f144_title=#{f144_title}
+        </if>
+        <if test="f145_title !=null and f145_title !=''">
+            AND f145_title=#{f145_title}
+        </if>
+        <if test="f146_title !=null and f146_title !=''">
+            AND f146_title=#{f146_title}
+        </if>
+        <if test="f147_title !=null and f147_title !=''">
+            AND f147_title=#{f147_title}
+        </if>
+        <if test="f148_title !=null and f148_title !=''">
+            AND f148_title=#{f148_title}
+        </if>
+        <if test="f149_title !=null and f149_title !=''">
+            AND f149_title=#{f149_title}
+        </if>
+        <if test="f150_title !=null and f150_title !=''">
+            AND f150_title=#{f150_title}
+        </if>
+
+    </select>
+
+    <insert id="addMetadata"  parameterType="ProjectMetadata" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wz_project_metadata
+        (
+                name,length,created,updated,
+                f1_title,f2_title,f3_title,f4_title,f5_title,
+                f6_title,f7_title,f8_title,f9_title,f10_title,
+                f11_title,f12_title,f13_title,f14_title,f15_title,
+                f16_title,f17_title,f18_title,f19_title,f20_title,
+                f21_title,f22_title,f23_title,f24_title,f25_title,
+                f26_title,f27_title,f28_title,f29_title,f30_title,
+                f31_title,f32_title,f33_title,f34_title,f35_title,
+                f36_title,f37_title,f38_title,f39_title,f40_title,
+                f41_title,f42_title,f43_title,f44_title,f45_title,
+                f46_title,f47_title,f48_title,f49_title,f50_title,
+                f51_title,f52_title,f53_title,f54_title,f55_title,
+                f56_title,f57_title,f58_title,f59_title,f60_title,
+                f61_title,f62_title,f63_title,f64_title,f65_title,
+                f66_title,f67_title,f68_title,f69_title,f70_title,
+                f71_title,f72_title,f73_title,f74_title,f75_title,
+                f76_title,f77_title,f78_title,f79_title,f80_title,
+                f81_title,f82_title,f83_title,f84_title,f85_title,
+                f86_title,f87_title,f88_title,f89_title,f90_title,
+                f91_title,f92_title,f93_title,f94_title,f95_title,
+                f96_title,f97_title,f98_title,f99_title,f100_title,
+                f101_title,f102_title,f103_title,f104_title,f105_title,
+                f106_title,f107_title,f108_title,f109_title,f110_title,
+                f111_title,f112_title,f113_title,f114_title,f115_title,
+                f116_title,f117_title,f118_title,f119_title,f120_title,
+                f121_title,f122_title,f123_title,f124_title,f125_title,
+                f126_title,f127_title,f128_title,f129_title,f130_title,
+                f131_title,f132_title,f133_title,f134_title,f135_title,
+                f136_title,f137_title,f138_title,f139_title,f140_title,
+                f141_title,f142_title,f143_title,f144_title,f145_title,
+                f146_title,f147_title,f148_title,f149_title,f150_title
+        )
+        VALUES ( #{name},        #{length},        now(),        now(),
+                #{f1_title},        #{f2_title},        #{f3_title},        #{f4_title},        #{f5_title},
+                #{f6_title},        #{f7_title},        #{f8_title},        #{f9_title},        #{f10_title},
+                #{f11_title},        #{f12_title},        #{f13_title},        #{f14_title},        #{f15_title},
+                #{f16_title},        #{f17_title},        #{f18_title},        #{f19_title},        #{f20_title},
+                #{f21_title},        #{f22_title},        #{f23_title},        #{f24_title},        #{f25_title},
+                #{f26_title},        #{f27_title},        #{f28_title},        #{f29_title},        #{f30_title},
+                #{f31_title},        #{f32_title},        #{f33_title},        #{f34_title},        #{f35_title},
+                #{f36_title},        #{f37_title},        #{f38_title},        #{f39_title},        #{f40_title},
+                #{f41_title},        #{f42_title},        #{f43_title},        #{f44_title},        #{f45_title},
+                #{f46_title},        #{f47_title},        #{f48_title},        #{f49_title},        #{f50_title},
+                #{f51_title},        #{f52_title},        #{f53_title},        #{f54_title},        #{f55_title},
+                #{f56_title},        #{f57_title},        #{f58_title},        #{f59_title},        #{f60_title},
+                #{f61_title},        #{f62_title},        #{f63_title},        #{f64_title},        #{f65_title},
+                #{f66_title},        #{f67_title},        #{f68_title},        #{f69_title},        #{f70_title},
+                #{f71_title},        #{f72_title},        #{f73_title},        #{f74_title},        #{f75_title},
+                #{f76_title},        #{f77_title},        #{f78_title},        #{f79_title},        #{f80_title},
+                #{f81_title},        #{f82_title},        #{f83_title},        #{f84_title},        #{f85_title},
+                #{f86_title},        #{f87_title},        #{f88_title},        #{f89_title},        #{f90_title},
+                #{f91_title},        #{f92_title},        #{f93_title},        #{f94_title},        #{f95_title},
+                #{f96_title},        #{f97_title},        #{f98_title},        #{f99_title},        #{f100_title},
+                #{f101_title},        #{f102_title},        #{f103_title},        #{f104_title},        #{f105_title},
+                #{f106_title},        #{f107_title},        #{f108_title},        #{f109_title},        #{f110_title},
+                #{f111_title},        #{f112_title},        #{f113_title},        #{f114_title},        #{f115_title},
+                #{f116_title},        #{f117_title},        #{f118_title},        #{f119_title},        #{f120_title},
+                #{f121_title},        #{f122_title},        #{f123_title},        #{f124_title},        #{f125_title},
+                #{f126_title},        #{f127_title},        #{f128_title},        #{f129_title},        #{f130_title},
+                #{f131_title},        #{f132_title},        #{f133_title},        #{f134_title},        #{f135_title},
+                #{f136_title},        #{f137_title},        #{f138_title},        #{f139_title},        #{f140_title},
+                #{f141_title},        #{f142_title},        #{f143_title},        #{f144_title},        #{f145_title},
+                #{f146_title},        #{f147_title},        #{f148_title},        #{f149_title},        #{f150_title}
+              )
+    </insert>
+    <update id="updateMetadataName"   parameterType="hashMap" >
+        UPDATE wz_project_metadata
+        SET
+          name=#{new_name}
+        WHERE id=#{metadata_id}
+    </update>
+
+    <update id="updateById"   parameterType="ProjectMetadata" >
+        UPDATE wz_project_metadata
+        SET
+            name=#{name},            length=#{length},            updated=now(),
+            f1_title=#{f1_title},            f2_title=#{f2_title},            f3_title=#{f3_title},            f4_title=#{f4_title},            f5_title=#{f5_title},
+            f6_title=#{f6_title},            f7_title=#{f7_title},            f8_title=#{f8_title},            f9_title=#{f9_title},            f10_title=#{f10_title},
+            f11_title=#{f11_title},            f12_title=#{f12_title},            f13_title=#{f13_title},            f14_title=#{f14_title},            f15_title=#{f15_title},
+            f16_title=#{f16_title},            f17_title=#{f17_title},            f18_title=#{f18_title},            f19_title=#{f19_title},            f20_title=#{f20_title},
+            f21_title=#{f21_title},            f22_title=#{f22_title},            f23_title=#{f23_title},            f24_title=#{f24_title},            f25_title=#{f25_title},
+            f26_title=#{f26_title},            f27_title=#{f27_title},            f28_title=#{f28_title},            f29_title=#{f29_title},            f30_title=#{f30_title},
+            f31_title=#{f31_title},            f32_title=#{f32_title},            f33_title=#{f33_title},            f34_title=#{f34_title},            f35_title=#{f35_title},
+            f36_title=#{f36_title},            f37_title=#{f37_title},            f38_title=#{f38_title},            f39_title=#{f39_title},            f40_title=#{f40_title},
+            f41_title=#{f41_title},            f42_title=#{f42_title},            f43_title=#{f43_title},            f44_title=#{f44_title},            f45_title=#{f45_title},
+            f46_title=#{f46_title},            f47_title=#{f47_title},            f48_title=#{f48_title},            f49_title=#{f49_title},            f50_title=#{f50_title},
+            f51_title=#{f51_title},            f52_title=#{f52_title},            f53_title=#{f53_title},            f54_title=#{f54_title},            f55_title=#{f55_title},
+            f56_title=#{f56_title},            f57_title=#{f57_title},            f58_title=#{f58_title},            f59_title=#{f59_title},            f60_title=#{f60_title},
+            f61_title=#{f61_title},            f62_title=#{f62_title},            f63_title=#{f63_title},            f64_title=#{f64_title},            f65_title=#{f65_title},
+            f66_title=#{f66_title},            f67_title=#{f67_title},            f68_title=#{f68_title},            f69_title=#{f69_title},            f70_title=#{f70_title},
+            f71_title=#{f71_title},            f72_title=#{f72_title},            f73_title=#{f73_title},            f74_title=#{f74_title},            f75_title=#{f75_title},
+            f76_title=#{f76_title},            f77_title=#{f77_title},            f78_title=#{f78_title},            f79_title=#{f79_title},            f80_title=#{f80_title},
+            f81_title=#{f81_title},            f82_title=#{f82_title},            f83_title=#{f83_title},            f84_title=#{f84_title},            f85_title=#{f85_title},
+            f86_title=#{f86_title},            f87_title=#{f87_title},            f88_title=#{f88_title},            f89_title=#{f89_title},            f90_title=#{f90_title},
+            f91_title=#{f91_title},            f92_title=#{f92_title},            f93_title=#{f93_title},            f94_title=#{f94_title},            f95_title=#{f95_title},
+            f96_title=#{f96_title},            f97_title=#{f97_title},            f98_title=#{f98_title},            f99_title=#{f99_title},            f100_title=#{f100_title},
+            f101_title=#{f101_title},            f102_title=#{f102_title},            f103_title=#{f103_title},            f104_title=#{f104_title},            f105_title=#{f105_title},
+            f106_title=#{f106_title},            f107_title=#{f107_title},            f108_title=#{f108_title},            f109_title=#{f109_title},            f110_title=#{f110_title},
+            f111_title=#{f111_title},            f112_title=#{f112_title},            f113_title=#{f113_title},            f114_title=#{f114_title},            f115_title=#{f115_title},
+            f116_title=#{f116_title},            f117_title=#{f117_title},            f118_title=#{f118_title},            f119_title=#{f119_title},            f120_title=#{f120_title},
+            f121_title=#{f121_title},            f122_title=#{f122_title},            f123_title=#{f123_title},            f124_title=#{f124_title},            f125_title=#{f125_title},
+            f126_title=#{f126_title},            f127_title=#{f127_title},            f128_title=#{f128_title},            f129_title=#{f129_title},            f130_title=#{f130_title},
+            f131_title=#{f131_title},            f132_title=#{f132_title},            f133_title=#{f133_title},            f134_title=#{f134_title},            f135_title=#{f135_title},
+            f136_title=#{f136_title},            f137_title=#{f137_title},            f138_title=#{f138_title},            f139_title=#{f139_title},            f140_title=#{f140_title},
+            f141_title=#{f141_title},            f142_title=#{f142_title},            f143_title=#{f143_title},            f144_title=#{f144_title},            f145_title=#{f145_title},
+            f146_title=#{f146_title},            f147_title=#{f147_title},            f148_title=#{f148_title},            f149_title=#{f149_title},            f150_title=#{f150_title}
+          where id = #{id}
+    </update>
+
+
+</mapper>

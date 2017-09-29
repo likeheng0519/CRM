@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.UserAppealDao" >
+  <resultMap id="userAppeal_map" type="cn.com.conversant.weizi.crm.api.entity.UserAppeal" >
+    <id column="id" property="id" />
+    <result column="project_metadata_id" property="project_metadata_id" />
+    <result column="store_code" property="store_code" />
+    <result column="author" property="author" />
+    <result column="created" property="created" />
+    <result column="content" property="content" />
+    <result column="operator" property="operator" />
+    <result column="updated" property="updated" />
+    <result column="status" property="status" />
+    <result column="image1" property="image1" />
+    <result column="image2" property="image2" />
+    <result column="image3" property="image3" />
+    <result column="image4" property="image4" />
+    <result column="image5" property="image5" />
+    <result column="image6" property="image6" />
+    <result column="image7" property="image7" />
+    <result column="image8" property="image8" />
+    <result column="image9" property="image9" />
+    <result column="image10" property="image10" />
+    <association column="author" property="authorUser" select="selectAppealUser">
+    </association>
+    <association column="operator" property="operatorUser" select="selectAppealUser">
+    </association>
+    <association column="project_metadata_id" property="project" select="selectAppealProject">
+    </association>
+  </resultMap>
+
+  <resultMap id="appealUserMap" type="cn.com.conversant.weizi.crm.api.entity.User">
+      <id property="id" column="id"/>
+      <result property="username" column="username"/>
+  </resultMap>
+
+  <select id="selectAppealUser" resultMap="appealUserMap">
+      select id, username from wz_user where id = #{id}
+  </select>
+
+  <resultMap id="appealProjectMap" type="cn.com.conversant.weizi.crm.api.entity.ProjectMetadata">
+    <id property="id" column="id"/>
+    <result property="name" column="name"/>
+  </resultMap>
+
+  <select id="selectAppealProject" resultMap="appealProjectMap">
+      select id, name from wz_project_metadata where id = #{id}
+  </select>
+
+  <sql id="table_column_list" >
+    id,store_code,author,created,content,operator,updated,status,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,project_metadata_id
+  </sql>
+
+  <insert id="addUserAppeal" parameterType="UserAppeal" useGeneratedKeys="true" keyProperty="id">
+    insert into wz_appeal(project_metadata_id,store_code,author,created,content,operator,updated,status,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10)
+    values(#{project_metadata_id},#{store_code},#{author},now(),
+            #{content},#{operator},now(),#{status},
+            #{image1},#{image2},#{image3},#{image4},#{image5},
+            #{image6},#{image7},#{image8},#{image9},#{image10}
+            )
+  </insert>
+
+  <select id="getUserAppealById" resultMap="userAppeal_map" parameterType="java.lang.Long" >
+    select
+    <include refid="table_column_list" />
+    from wz_appeal
+    where id = #{id}
+    and status != 0
+  </select>
+
+  <select id="getUserAppealByAuthor" resultMap="userAppeal_map" parameterType="java.lang.Long" >
+    select
+    <include refid="table_column_list" />
+    from wz_appeal
+    where author = #{author_id}
+    and status != 0
+  </select>
+
+  <select id="getUserAppealByStoreCode" resultMap="userAppeal_map" parameterType="String" >
+    select
+    <include refid="table_column_list" />
+    from wz_appeal
+    where store_code = #{store_code}
+    and status != 0
+  </select>
+
+    <select id="getAppealTotalCount" resultType="_int">
+        select
+        count(id)
+        from wz_appeal
+        where status != 0
+    </select>
+
+    <select id="list" resultMap="userAppeal_map">
+        select
+        <include refid="table_column_list" />
+        from wz_appeal
+        where status != 0
+        order by id
+        <if test="offset > -1 and length > 0">
+            LIMIT #{length} OFFSET #{offset}
+        </if>
+    </select>
+
+    <select id="searchAppeal" resultMap="userAppeal_map">
+        select
+        <include refid="table_column_list" />
+        from wz_appeal
+        where status != 0
+        <if test="searchKey !=null and searchKey !=''">
+            And store_code = #{searchKey}
+        </if>
+        <if test="projectId > 0">
+            And project_metadata_id = #{projectId}
+        </if>
+        order by id
+        <if test="offset > -1 and length > 0">
+            LIMIT #{length} OFFSET #{offset}
+        </if>
+    </select>
+
+    <select id="getSearchTotalCount" resultType="_int">
+        select
+        count(id)
+        from wz_appeal
+        where status != 0
+        <if test="searchKey !=null and searchKey !=''">
+            And store_code = #{searchKey}
+        </if>
+        <if test="projectId > 0">
+            And project_metadata_id = #{projectId}
+        </if>
+    </select>
+
+    <update id="changeStatus" parameterType="UserAppeal">
+        update wz_appeal
+        set operator = #{operator}, status = #{status}, updated = now()
+        where id = #{id};
+    </update>
+</mapper>

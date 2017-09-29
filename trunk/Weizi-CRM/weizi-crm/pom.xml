@@ -1,0 +1,351 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.com.conversant.weizi.crm</groupId>
+  <artifactId>weizi-scms</artifactId>
+  <packaging>jar</packaging>
+  <version>v1.0.0</version>
+  <name>Weizi-Scms Maven Webapp</name>
+  <!--<url>http://weizi.com</url>-->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.source.jdk>1.7</java.source.jdk>
+    <spring.version>4.0.6.RELEASE</spring.version>
+    <mybatis-spring.version>1.2.2</mybatis-spring.version>
+    <mybatis.version>3.2.7</mybatis.version>
+    <commons-dbcp.version>1.4</commons-dbcp.version>
+    <janio-version>2.6.1</janio-version>
+    <log4j.version>1.2.17</log4j.version>
+    <logback.version>1.0.13</logback.version>
+    <commons-csv.version>1.2</commons-csv.version>
+    <slf4j.version>1.7.2</slf4j.version>
+    <jackson.version>2.8.3</jackson.version>
+    <guava.version>13.0.1</guava.version>
+    <postgresql.version>9.1-901.jdbc4</postgresql.version>
+    <fastjson.version>1.1.15</fastjson.version>
+    <servlet.version>3.0-alpha-1</servlet.version>
+    <org.apache.commons.version>3.1</org.apache.commons.version>
+    <conversant-commons.version>1.0.6-SNAPSHOT</conversant-commons.version>
+    <shiro.version>1.2.3</shiro.version>
+  </properties>
+
+  <dependencies>
+    <!--junit的jar包-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.9</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--spring-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!--mybatis-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>${mybatis-spring.version}</version>
+    </dependency>
+
+    <!-- dbcp connection pool -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>${commons-dbcp.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+
+
+    <dependency>
+      <groupId>org.lazyluke</groupId>
+      <artifactId>log4jdbc-remix</artifactId>
+      <version>0.2.7</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
+      <version>${janio-version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
+      <version>3.3.0.Final</version>
+    </dependency>
+
+
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+
+
+    <!-- LOGGING begin -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+        <artifactId>jul-to-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.lazyluke</groupId>
+      <artifactId>log4jdbc-remix</artifactId>
+      <version>0.2.7</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-access</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
+      <version>${janio-version}</version>
+    </dependency>
+
+    <!-- LOGGING end -->
+
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${org.apache.commons.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>${postgresql.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${servlet.version}</version>
+    </dependency>
+
+    <!--apache csv-->
+
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>${commons-csv.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson.version}</version>
+    </dependency>
+    -->
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-core</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-spring</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-ehcache</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-web</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>cn.com.conversant</groupId>
+          <artifactId>conversant-commons</artifactId>
+          <version>${conversant-commons.version}</version>
+      </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/net.sourceforge.jchardet/jchardet -->
+    <dependency>
+      <groupId>net.sourceforge.jchardet</groupId>
+      <artifactId>jchardet</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+
+
+
+  </dependencies>
+
+
+  <build>
+
+    <plugins>
+
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <!--<descriptor>assembly-api-dist.xml</descriptor>-->
+            <descriptor>assembly-scms-dist.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <extensions>false</extensions>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>8.1.0.v20120127</version>
+        <configuration>
+          <systemProperties>
+            <systemProperty>
+              <name>project.env</name>
+              <value>local</value>
+            </systemProperty>
+            <systemProperty>
+              <name>log.home</name>
+              <value>C:/weizi/log/scms</value>
+            </systemProperty>
+          </systemProperties>
+          <webAppConfig>
+            <contextPath>/</contextPath>
+            <extraClasspath>${basedir}/conf</extraClasspath>
+          </webAppConfig>
+          <scanTargetPatterns>
+            <scanTargetPattern>
+              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+              <excludes>
+                <exclude>web-api.xml</exclude>
+              </excludes>
+            </scanTargetPattern>
+          </scanTargetPatterns>
+          <connectors>
+            <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+              <port>8080</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>${java.source.jdk}</source>
+                <target>${java.source.jdk}</target>
+                <encoding>${project.build.sourceEncoding}</encoding>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
+</project>

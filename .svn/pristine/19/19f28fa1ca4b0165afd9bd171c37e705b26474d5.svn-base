@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.ProjectContentDao" >
+    <resultMap id="wz_project_content_map" type="cn.com.conversant.weizi.crm.api.entity.ProjectContent" >
+        <id column="id" property="id" />
+        <id column="project_metadata_id" property="project_metadata_id" />
+        <id column="created" property="created" />
+        <id column="f1" property="f1" />
+        <id column="f2" property="f2" />
+        <id column="f3" property="f3" />
+        <id column="f4" property="f4" />
+        <id column="f5" property="f5" />
+        <id column="f6" property="f6" />
+        <id column="f7" property="f7" />
+        <id column="f8" property="f8" />
+        <id column="f9" property="f9" />
+        <id column="f10" property="f10" />
+        <id column="f11" property="f11" />
+        <id column="f12" property="f12" />
+        <id column="f13" property="f13" />
+        <id column="f14" property="f14" />
+        <id column="f15" property="f15" />
+        <id column="f16" property="f16" />
+        <id column="f17" property="f17" />
+        <id column="f18" property="f18" />
+        <id column="f19" property="f19" />
+        <id column="f20" property="f20" />
+        <id column="f21" property="f21" />
+        <id column="f22" property="f22" />
+        <id column="f23" property="f23" />
+        <id column="f24" property="f24" />
+        <id column="f25" property="f25" />
+        <id column="f26" property="f26" />
+        <id column="f27" property="f27" />
+        <id column="f28" property="f28" />
+        <id column="f29" property="f29" />
+        <id column="f30" property="f30" />
+        <id column="f31" property="f31" />
+        <id column="f32" property="f32" />
+        <id column="f33" property="f33" />
+        <id column="f34" property="f34" />
+        <id column="f35" property="f35" />
+        <id column="f36" property="f36" />
+        <id column="f37" property="f37" />
+        <id column="f38" property="f38" />
+        <id column="f39" property="f39" />
+        <id column="f40" property="f40" />
+        <id column="f41" property="f41" />
+        <id column="f42" property="f42" />
+        <id column="f43" property="f43" />
+        <id column="f44" property="f44" />
+        <id column="f45" property="f45" />
+        <id column="f46" property="f46" />
+        <id column="f47" property="f47" />
+        <id column="f48" property="f48" />
+        <id column="f49" property="f49" />
+        <id column="f50" property="f50" />
+        <id column="f51" property="f51" />
+        <id column="f52" property="f52" />
+        <id column="f53" property="f53" />
+        <id column="f54" property="f54" />
+        <id column="f55" property="f55" />
+        <id column="f56" property="f56" />
+        <id column="f57" property="f57" />
+        <id column="f58" property="f58" />
+        <id column="f59" property="f59" />
+        <id column="f60" property="f60" />
+        <id column="f61" property="f61" />
+        <id column="f62" property="f62" />
+        <id column="f63" property="f63" />
+        <id column="f64" property="f64" />
+        <id column="f65" property="f65" />
+        <id column="f66" property="f66" />
+        <id column="f67" property="f67" />
+        <id column="f68" property="f68" />
+        <id column="f69" property="f69" />
+        <id column="f70" property="f70" />
+        <id column="f71" property="f71" />
+        <id column="f72" property="f72" />
+        <id column="f73" property="f73" />
+        <id column="f74" property="f74" />
+        <id column="f75" property="f75" />
+        <id column="f76" property="f76" />
+        <id column="f77" property="f77" />
+        <id column="f78" property="f78" />
+        <id column="f79" property="f79" />
+        <id column="f80" property="f80" />
+        <id column="f81" property="f81" />
+        <id column="f82" property="f82" />
+        <id column="f83" property="f83" />
+        <id column="f84" property="f84" />
+        <id column="f85" property="f85" />
+        <id column="f86" property="f86" />
+        <id column="f87" property="f87" />
+        <id column="f88" property="f88" />
+        <id column="f89" property="f89" />
+        <id column="f90" property="f90" />
+        <id column="f91" property="f91" />
+        <id column="f92" property="f92" />
+        <id column="f93" property="f93" />
+        <id column="f94" property="f94" />
+        <id column="f95" property="f95" />
+        <id column="f96" property="f96" />
+        <id column="f97" property="f97" />
+        <id column="f98" property="f98" />
+        <id column="f99" property="f99" />
+        <id column="f100" property="f100" />
+        <id column="f101" property="f101" />
+        <id column="f102" property="f102" />
+        <id column="f103" property="f103" />
+        <id column="f104" property="f104" />
+        <id column="f105" property="f105" />
+        <id column="f106" property="f106" />
+        <id column="f107" property="f107" />
+        <id column="f108" property="f108" />
+        <id column="f109" property="f109" />
+        <id column="f110" property="f110" />
+        <id column="f111" property="f111" />
+        <id column="f112" property="f112" />
+        <id column="f113" property="f113" />
+        <id column="f114" property="f114" />
+        <id column="f115" property="f115" />
+        <id column="f116" property="f116" />
+        <id column="f117" property="f117" />
+        <id column="f118" property="f118" />
+        <id column="f119" property="f119" />
+        <id column="f120" property="f120" />
+        <id column="f121" property="f121" />
+        <id column="f122" property="f122" />
+        <id column="f123" property="f123" />
+        <id column="f124" property="f124" />
+        <id column="f125" property="f125" />
+        <id column="f126" property="f126" />
+        <id column="f127" property="f127" />
+        <id column="f128" property="f128" />
+        <id column="f129" property="f129" />
+        <id column="f130" property="f130" />
+        <id column="f131" property="f131" />
+        <id column="f132" property="f132" />
+        <id column="f133" property="f133" />
+        <id column="f134" property="f134" />
+        <id column="f135" property="f135" />
+        <id column="f136" property="f136" />
+        <id column="f137" property="f137" />
+        <id column="f138" property="f138" />
+        <id column="f139" property="f139" />
+        <id column="f140" property="f140" />
+        <id column="f141" property="f141" />
+        <id column="f142" property="f142" />
+        <id column="f143" property="f143" />
+        <id column="f144" property="f144" />
+        <id column="f145" property="f145" />
+        <id column="f146" property="f146" />
+        <id column="f147" property="f147" />
+        <id column="f148" property="f148" />
+        <id column="f149" property="f149" />
+        <id column="f150" property="f150" />
+    </resultMap>
+    <sql id="table_column_list" >
+        id,project_metadata_id,created,
+            f1,f2,f3,f4,f5,f6,f7,f8,f9,
+        f10,f11,f12,f13,f14,f15,f16,f17,f18,f19,
+        f20,f21,f22,f23,f24,f25,f26,f27,f28,f29,
+        f30,f31,f32,f33,f34,f35,f36,f37,f38,f39,
+        f40,f41,f42,f43,f44,f45,f46,f47,f48,f49,
+        f50,f51,f52,f53,f54,f55,f56,f57,f58,f59,
+        f60,f61,f62,f63,f64,f65,f66,f67,f68,f69,
+        f70,f71,f72,f73,f74,f75,f76,f77,f78,f79,
+        f80,f81,f82,f83,f84,f85,f86,f87,f88,f89,
+        f90,f91,f92,f93,f94,f95,f96,f97,f98,f99,
+        f100,f101,f102,f103,f104,f105,f106,f107,f108,f109,
+        f110,f111,f112,f113,f114,f115,f116,f117,f118,f119,
+        f120,f121,f122,f123,f124,f125,f126,f127,f128,f129,
+        f130,f131,f132,f133,f134,f135,f136,f137,f138,f139,
+        f140,f141,f142,f143,f144,f145,f146,f147,f148,f149,
+        f150
+    </sql>
+
+    <select id="getProjectContentListByMetaId" resultMap="wz_project_content_map" parameterType="java.lang.Long" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_content
+        where project_metadata_id = #{metadataid}
+    </select>
+
+    <select id="getDistinct" resultType="String" parameterType="hashMap" >
+        select
+         DISTINCT ${column}
+        from wz_project_content
+        where
+          project_metadata_id = #{metadataId}
+    </select>
+
+    <select id="getListByProjectSearchCondition" resultMap="wz_project_content_map" parameterType="hashmap" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_content
+        where
+          project_metadata_id=#{metadata_id}
+        <if test="field1 !=null and field1 !=''">
+        AND ${field1} like CONCAT('%',#{field1_content},'%')
+        </if>
+        <if test="field2 !=null and field2 !=''">
+        AND ${field2} like CONCAT('%',#{field2_content},'%')
+        </if>
+        <if test="field3 !=null and field3 !=''">
+        AND ${field3} like CONCAT('%',#{field3_content},'%')
+        </if>
+        <if test="field4 !=null and field4 !=''">
+        AND ${field4} like CONCAT('%',#{field4_content},'%')
+        </if>
+        <if test="field5 !=null and field5 !=''">
+        AND ${field5} like CONCAT('%',#{field5_content},'%')
+        </if>
+        <if test="sales_manager !=null and sales_manager !=''">
+            AND f1=#{sales_manager}
+        </if>
+        <if test="sales_represent !=null and sales_represent !=''">
+            AND f2=#{sales_represent}
+        </if>
+    </select>
+
+    <select id="getListByProjectContent" resultMap="wz_project_content_map" parameterType="ProjectContent" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_content
+        where
+        <if test="f1 !=null and f1 !=''">
+            AND f1 like CONCAT('%',#{f1},'%')
+        </if>
+        <if test="f2 !=null and f2 !=''">
+            AND f2 like CONCAT('%',#{f1},'%')
+        </if>
+        <if test="f3 !=null and f3 !=''">
+            AND f3 like CONCAT('%',#{f3},'%')
+        </if>
+        <if test="f4 !=null and f4 !=''">
+            AND f4 like CONCAT('%',#{f4},'%')
+        </if>
+        <if test="f5 !=null and f5 !=''">
+            AND f5 like CONCAT('%',#{f5},'%')
+        </if>
+        <if test="f6 !=null and f6 !=''">
+            AND f6 like CONCAT('%',#{f6},'%')
+        </if>
+        <if test="f7 !=null and f7 !=''">
+            AND f7 like CONCAT('%',#{f7},'%')
+        </if>
+        <if test="f8 !=null and f8 !=''">
+            AND f8 like CONCAT('%',#{f8},'%')
+        </if>
+        <if test="f9 !=null and f9 !=''">
+            AND f9 like CONCAT('%',#{f9},'%')
+        </if>
+        <if test="f10 !=null and f10 !=''">
+            AND f10 like CONCAT('%',#{f10},'%')
+        </if>
+        <if test="f11 !=null and f11 !=''">
+            AND f11 like CONCAT('%',#{f11},'%')
+        </if>
+        <if test="f12 !=null and f12 !=''">
+            AND f12 like CONCAT('%',#{f12},'%')
+        </if>
+        <if test="f13 !=null and f13 !=''">
+            AND f13 like CONCAT('%',#{f13},'%')
+        </if>
+        <if test="f14 !=null and f14 !=''">
+            AND f14 like CONCAT('%',#{f14},'%')
+        </if>
+        <if test="f15 !=null and f15 !=''">
+            AND f15 like CONCAT('%',#{f15},'%')
+        </if>
+        <if test="f16 !=null and f16 !=''">
+            AND f16 like CONCAT('%',#{f16},'%')
+        </if>
+        <if test="f17 !=null and f17 !=''">
+            AND f17 like CONCAT('%',#{f17},'%')
+        </if>
+        <if test="f18 !=null and f18 !=''">
+            AND f18 like CONCAT('%',#{f18},'%')
+        </if>
+        <if test="f19 !=null and f19 !=''">
+            AND f19 like CONCAT('%',#{f19},'%')
+        </if>
+        <if test="f20 !=null and f20 !=''">
+            AND f20 like CONCAT('%',#{f20},'%')
+        </if>
+        <if test="f21 !=null and f21 !=''">
+            AND f21 like CONCAT('%',#{f21},'%')
+        </if>
+        <if test="f22 !=null and f22 !=''">
+            AND f22 like CONCAT('%',#{f22},'%')
+        </if>
+        <if test="f23 !=null and f23 !=''">
+            AND f23 like CONCAT('%',#{f23},'%')
+        </if>
+        <if test="f24 !=null and f24 !=''">
+            AND f24 like CONCAT('%',#{f24},'%')
+        </if>
+        <if test="f25 !=null and f25 !=''">
+            AND f25 like CONCAT('%',#{f25},'%')
+        </if>
+        <if test="f26 !=null and f26 !=''">
+            AND f26 like CONCAT('%',#{f26},'%')
+        </if>
+        <if test="f27 !=null and f27 !=''">
+            AND f27 like CONCAT('%',#{f27},'%')
+        </if>
+        <if test="f28 !=null and f28 !=''">
+            AND f28 like CONCAT('%',#{f28},'%')
+        </if>
+        <if test="f29 !=null and f29 !=''">
+            AND f29 like CONCAT('%',#{f29},'%')
+        </if>
+        <if test="f30 !=null and f30 !=''">
+            AND f30 like CONCAT('%',#{f30},'%')
+        </if>
+        <if test="f31 !=null and f31 !=''">
+            AND f31 like CONCAT('%',#{f31},'%')
+        </if>
+        <if test="f32 !=null and f32 !=''">
+            AND f32 like CONCAT('%',#{f32},'%')
+        </if>
+        <if test="f33 !=null and f33 !=''">
+            AND f33 like CONCAT('%',#{f33},'%')
+        </if>
+        <if test="f34 !=null and f34 !=''">
+            AND f34 like CONCAT('%',#{f34},'%')
+        </if>
+        <if test="f35 !=null and f35 !=''">
+            AND f35 like CONCAT('%',#{f35},'%')
+        </if>
+        <if test="f36 !=null and f36 !=''">
+            AND f36 like CONCAT('%',#{f36},'%')
+        </if>
+        <if test="f37 !=null and f37 !=''">
+            AND f37 like CONCAT('%',#{f37},'%')
+        </if>
+        <if test="f38 !=null and f38 !=''">
+            AND f38 like CONCAT('%',#{f38},'%')
+        </if>
+        <if test="f39 !=null and f39 !=''">
+            AND f39 like CONCAT('%',#{f39},'%')
+        </if>
+        <if test="f40 !=null and f40 !=''">
+            AND f40 like CONCAT('%',#{f40},'%')
+        </if>
+        <if test="f41 !=null and f41 !=''">
+            AND f41 like CONCAT('%',#{f41},'%')
+        </if>
+        <if test="f42 !=null and f42 !=''">
+            AND f42 like CONCAT('%',#{f42},'%')
+        </if>
+        <if test="f43 !=null and f43 !=''">
+            AND f43 like CONCAT('%',#{f43},'%')
+        </if>
+        <if test="f44 !=null and f44 !=''">
+            AND f44 like CONCAT('%',#{f44},'%')
+        </if>
+        <if test="f45 !=null and f45 !=''">
+            AND f45 like CONCAT('%',#{f45},'%')
+        </if>
+        <if test="f46 !=null and f46 !=''">
+            AND f46 like CONCAT('%',#{f46},'%')
+        </if>
+        <if test="f47 !=null and f47 !=''">
+            AND f47 like CONCAT('%',#{f47},'%')
+        </if>
+        <if test="f48 !=null and f48 !=''">
+            AND f48 like CONCAT('%',#{f48},'%')
+        </if>
+        <if test="f49 !=null and f49 !=''">
+            AND f49 like CONCAT('%',#{f49},'%')
+        </if>
+        <if test="f50 !=null and f50 !=''">
+            AND f50 like CONCAT('%',#{f50},'%')
+        </if>
+        <if test="f51 !=null and f51 !=''">
+            AND f51 like CONCAT('%',#{f51},'%')
+        </if>
+        <if test="f52 !=null and f52 !=''">
+            AND f52 like CONCAT('%',#{f52},'%')
+        </if>
+        <if test="f53 !=null and f53 !=''">
+            AND f53 like CONCAT('%',#{f53},'%')
+        </if>
+        <if test="f54 !=null and f54 !=''">
+            AND f54 like CONCAT('%',#{f54},'%')
+        </if>
+        <if test="f55 !=null and f55 !=''">
+            AND f55 like CONCAT('%',#{f55},'%')
+        </if>
+        <if test="f56 !=null and f56 !=''">
+            AND f56 like CONCAT('%',#{f56},'%')
+        </if>
+        <if test="f57 !=null and f57 !=''">
+            AND f57 like CONCAT('%',#{f57},'%')
+        </if>
+        <if test="f58 !=null and f58 !=''">
+            AND f58 like CONCAT('%',#{f58},'%')
+        </if>
+        <if test="f59 !=null and f59 !=''">
+            AND f59 like CONCAT('%',#{f59},'%')
+        </if>
+        <if test="f60 !=null and f60 !=''">
+            AND f60 like CONCAT('%',#{f60},'%')
+        </if>
+        <if test="f61 !=null and f61 !=''">
+            AND f61 like CONCAT('%',#{f61},'%')
+        </if>
+        <if test="f62 !=null and f62 !=''">
+            AND f62 like CONCAT('%',#{f62},'%')
+        </if>
+        <if test="f63 !=null and f63 !=''">
+            AND f63 like CONCAT('%',#{f63},'%')
+        </if>
+        <if test="f64 !=null and f64 !=''">
+            AND f64 like CONCAT('%',#{f64},'%')
+        </if>
+        <if test="f65 !=null and f65 !=''">
+            AND f65 like CONCAT('%',#{f65},'%')
+        </if>
+        <if test="f66 !=null and f66 !=''">
+            AND f66 like CONCAT('%',#{f66},'%')
+        </if>
+        <if test="f67 !=null and f67 !=''">
+            AND f67 like CONCAT('%',#{f67},'%')
+        </if>
+        <if test="f68 !=null and f68 !=''">
+            AND f68 like CONCAT('%',#{f68},'%')
+        </if>
+        <if test="f69 !=null and f69 !=''">
+            AND f69 like CONCAT('%',#{f69},'%')
+        </if>
+        <if test="f70 !=null and f70 !=''">
+            AND f70 like CONCAT('%',#{f70},'%')
+        </if>
+        <if test="f71 !=null and f71 !=''">
+            AND f71 like CONCAT('%',#{f71},'%')
+        </if>
+        <if test="f72 !=null and f72 !=''">
+            AND f72 like CONCAT('%',#{f72},'%')
+        </if>
+        <if test="f73 !=null and f73 !=''">
+            AND f73 like CONCAT('%',#{f73},'%')
+        </if>
+        <if test="f74 !=null and f74 !=''">
+            AND f74 like CONCAT('%',#{f74},'%')
+        </if>
+        <if test="f75 !=null and f75 !=''">
+            AND f75 like CONCAT('%',#{f75},'%')
+        </if>
+        <if test="f76 !=null and f76 !=''">
+            AND f76 like CONCAT('%',#{f76},'%')
+        </if>
+        <if test="f77 !=null and f77 !=''">
+            AND f77 like CONCAT('%',#{f77},'%')
+        </if>
+        <if test="f78 !=null and f78 !=''">
+            AND f78 like CONCAT('%',#{f78},'%')
+        </if>
+        <if test="f79 !=null and f79 !=''">
+            AND f79 like CONCAT('%',#{f79},'%')
+        </if>
+        <if test="f80 !=null and f80 !=''">
+            AND f80 like CONCAT('%',#{f80},'%')
+        </if>
+        <if test="f81 !=null and f81 !=''">
+            AND f81 like CONCAT('%',#{f81},'%')
+        </if>
+        <if test="f82 !=null and f82 !=''">
+            AND f82 like CONCAT('%',#{f82},'%')
+        </if>
+        <if test="f83 !=null and f83 !=''">
+            AND f83 like CONCAT('%',#{f83},'%')
+        </if>
+        <if test="f84 !=null and f84 !=''">
+            AND f84 like CONCAT('%',#{f84},'%')
+        </if>
+        <if test="f85 !=null and f85 !=''">
+            AND f85 like CONCAT('%',#{f85},'%')
+        </if>
+        <if test="f86 !=null and f86 !=''">
+            AND f86 like CONCAT('%',#{f86},'%')
+        </if>
+        <if test="f87 !=null and f87 !=''">
+            AND f87 like CONCAT('%',#{f87},'%')
+        </if>
+        <if test="f88 !=null and f88 !=''">
+            AND f88 like CONCAT('%',#{f88},'%')
+        </if>
+        <if test="f89 !=null and f89 !=''">
+            AND f89 like CONCAT('%',#{f89},'%')
+        </if>
+        <if test="f90 !=null and f90 !=''">
+            AND f90 like CONCAT('%',#{f90},'%')
+        </if>
+        <if test="f91 !=null and f91 !=''">
+            AND f91 like CONCAT('%',#{f91},'%')
+        </if>
+        <if test="f92 !=null and f92 !=''">
+            AND f92 like CONCAT('%',#{f92},'%')
+        </if>
+        <if test="f93 !=null and f93 !=''">
+            AND f93 like CONCAT('%',#{f93},'%')
+        </if>
+        <if test="f94 !=null and f94 !=''">
+            AND f94 like CONCAT('%',#{f94},'%')
+        </if>
+        <if test="f95 !=null and f95 !=''">
+            AND f95 like CONCAT('%',#{f95},'%')
+        </if>
+        <if test="f96 !=null and f96 !=''">
+            AND f96 like CONCAT('%',#{f96},'%')
+        </if>
+        <if test="f97 !=null and f97 !=''">
+            AND f97 like CONCAT('%',#{f97},'%')
+        </if>
+        <if test="f98 !=null and f98 !=''">
+            AND f98 like CONCAT('%',#{f98},'%')
+        </if>
+        <if test="f99 !=null and f99 !=''">
+            AND f99 like CONCAT('%',#{f99},'%')
+        </if>
+        <if test="f100 !=null and f100 !=''">
+            AND f100 like CONCAT('%',#{f100},'%')
+        </if>
+        <if test="f101 !=null and f101 !=''">
+            AND f101 like CONCAT('%',#{f101},'%')
+        </if>
+        <if test="f102 !=null and f102 !=''">
+            AND f102 like CONCAT('%',#{f102},'%')
+        </if>
+        <if test="f103 !=null and f103 !=''">
+            AND f103 like CONCAT('%',#{f103},'%')
+        </if>
+        <if test="f104 !=null and f104 !=''">
+            AND f104 like CONCAT('%',#{f104},'%')
+        </if>
+        <if test="f105 !=null and f105 !=''">
+            AND f105 like CONCAT('%',#{f105},'%')
+        </if>
+        <if test="f106 !=null and f106 !=''">
+            AND f106 like CONCAT('%',#{f106},'%')
+        </if>
+        <if test="f107 !=null and f107 !=''">
+            AND f107 like CONCAT('%',#{f107},'%')
+        </if>
+        <if test="f108 !=null and f108 !=''">
+            AND f108 like CONCAT('%',#{f108},'%')
+        </if>
+        <if test="f109 !=null and f109 !=''">
+            AND f109 like CONCAT('%',#{f109},'%')
+        </if>
+        <if test="f110 !=null and f110 !=''">
+            AND f110 like CONCAT('%',#{f110},'%')
+        </if>
+        <if test="f111 !=null and f111 !=''">
+            AND f111 like CONCAT('%',#{f111},'%')
+        </if>
+        <if test="f112 !=null and f112 !=''">
+            AND f112 like CONCAT('%',#{f112},'%')
+        </if>
+        <if test="f113 !=null and f113 !=''">
+            AND f113 like CONCAT('%',#{f113},'%')
+        </if>
+        <if test="f114 !=null and f114 !=''">
+            AND f114 like CONCAT('%',#{f114},'%')
+        </if>
+        <if test="f115 !=null and f115 !=''">
+            AND f115 like CONCAT('%',#{f115},'%')
+        </if>
+        <if test="f116 !=null and f116 !=''">
+            AND f116 like CONCAT('%',#{f116},'%')
+        </if>
+        <if test="f117 !=null and f117 !=''">
+            AND f117 like CONCAT('%',#{f117},'%')
+        </if>
+        <if test="f118 !=null and f118 !=''">
+            AND f118 like CONCAT('%',#{f118},'%')
+        </if>
+        <if test="f119 !=null and f119 !=''">
+            AND f119 like CONCAT('%',#{f119},'%')
+        </if>
+        <if test="f120 !=null and f120 !=''">
+            AND f120 like CONCAT('%',#{f120},'%')
+        </if>
+        <if test="f121 !=null and f121 !=''">
+            AND f121 like CONCAT('%',#{f121},'%')
+        </if>
+        <if test="f122 !=null and f122 !=''">
+            AND f122 like CONCAT('%',#{f122},'%')
+        </if>
+        <if test="f123 !=null and f123 !=''">
+            AND f123 like CONCAT('%',#{f123},'%')
+        </if>
+        <if test="f124 !=null and f124 !=''">
+            AND f124 like CONCAT('%',#{f124},'%')
+        </if>
+        <if test="f125 !=null and f125 !=''">
+            AND f125 like CONCAT('%',#{f125},'%')
+        </if>
+        <if test="f126 !=null and f126 !=''">
+            AND f126 like CONCAT('%',#{f126},'%')
+        </if>
+        <if test="f127 !=null and f127 !=''">
+            AND f127 like CONCAT('%',#{f127},'%')
+        </if>
+        <if test="f128 !=null and f128 !=''">
+            AND f128 like CONCAT('%',#{f128},'%')
+        </if>
+        <if test="f129 !=null and f129 !=''">
+            AND f129 like CONCAT('%',#{f129},'%')
+        </if>
+        <if test="f130 !=null and f130 !=''">
+            AND f130 like CONCAT('%',#{f130},'%')
+        </if>
+        <if test="f131 !=null and f131 !=''">
+            AND f131 like CONCAT('%',#{f131},'%')
+        </if>
+        <if test="f132 !=null and f132 !=''">
+            AND f132 like CONCAT('%',#{f132},'%')
+        </if>
+        <if test="f133 !=null and f133 !=''">
+            AND f133 like CONCAT('%',#{f133},'%')
+        </if>
+        <if test="f134 !=null and f134 !=''">
+            AND f134 like CONCAT('%',#{f134},'%')
+        </if>
+        <if test="f135 !=null and f135 !=''">
+            AND f135 like CONCAT('%',#{f135},'%')
+        </if>
+        <if test="f136 !=null and f136 !=''">
+            AND f136 like CONCAT('%',#{f136},'%')
+        </if>
+        <if test="f137 !=null and f137 !=''">
+            AND f137 like CONCAT('%',#{f137},'%')
+        </if>
+        <if test="f138 !=null and f138 !=''">
+            AND f138 like CONCAT('%',#{f138},'%')
+        </if>
+        <if test="f139 !=null and f139 !=''">
+            AND f139 like CONCAT('%',#{f139},'%')
+        </if>
+        <if test="f140 !=null and f140 !=''">
+            AND f140 like CONCAT('%',#{f140},'%')
+        </if>
+        <if test="f141 !=null and f141 !=''">
+            AND f141 like CONCAT('%',#{f141},'%')
+        </if>
+        <if test="f142 !=null and f142 !=''">
+            AND f142 like CONCAT('%',#{f142},'%')
+        </if>
+        <if test="f143 !=null and f143 !=''">
+            AND f143 like CONCAT('%',#{f143},'%')
+        </if>
+        <if test="f144 !=null and f144 !=''">
+            AND f144 like CONCAT('%',#{f144},'%')
+        </if>
+        <if test="f145 !=null and f145 !=''">
+            AND f145 like CONCAT('%',#{f145},'%')
+        </if>
+        <if test="f146 !=null and f146 !=''">
+            AND f146 like CONCAT('%',#{f146},'%')
+        </if>
+        <if test="f147 !=null and f147 !=''">
+            AND f147 like CONCAT('%',#{f147},'%')
+        </if>
+        <if test="f148 !=null and f148 !=''">
+            AND f148 like CONCAT('%',#{f148},'%')
+        </if>
+        <if test="f149 !=null and f149 !=''">
+            AND f149 like CONCAT('%',#{f149},'%')
+        </if>
+        <if test="f150 !=null and f150 !=''">
+            AND f150 like CONCAT('%',#{f150},'%')
+        </if>
+    </select>
+
+    <select id="getContentById" resultMap="wz_project_content_map" parameterType="java.lang.Long" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_content
+        where id = #{id}
+    </select>
+
+    <delete id="deleteContentByMetadataId"  parameterType="int">
+        DELETE FROM  wz_project_content
+        WHERE project_metadata_id=#{metadataId}
+    </delete>
+
+    <delete id="deleteContentById"  parameterType="java.lang.Long">
+        DELETE FROM  wz_project_content
+        WHERE id=#{id}
+    </delete>
+
+    <insert id="addContent"  parameterType="ProjectContent" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wz_project_content
+        (       project_metadata_id,created,
+                f1,f2,f3,f4,f5,f6,f7,f8,f9,
+                f10,f11,f12,f13,f14,f15,f16,f17,f18,f19,
+                f20,f21,f22,f23,f24,f25,f26,f27,f28,f29,
+                f30,f31,f32,f33,f34,f35,f36,f37,f38,f39,
+                f40,f41,f42,f43,f44,f45,f46,f47,f48,f49,
+                f50,f51,f52,f53,f54,f55,f56,f57,f58,f59,
+                f60,f61,f62,f63,f64,f65,f66,f67,f68,f69,
+                f70,f71,f72,f73,f74,f75,f76,f77,f78,f79,
+                f80,f81,f82,f83,f84,f85,f86,f87,f88,f89,
+                f90,f91,f92,f93,f94,f95,f96,f97,f98,f99,
+                f100,f101,f102,f103,f104,f105,f106,f107,f108,f109,
+                f110,f111,f112,f113,f114,f115,f116,f117,f118,f119,
+                f120,f121,f122,f123,f124,f125,f126,f127,f128,f129,
+                f130,f131,f132,f133,f134,f135,f136,f137,f138,f139,
+                f140,f141,f142,f143,f144,f145,f146,f147,f148,f149,
+                f150
+          )
+        VALUES (#{project_metadata_id},now(),
+                #{f1},#{f2},#{f3},#{f4},#{f5},#{f6},#{f7},#{f8},#{f9},#{f10},
+                #{f11},#{f12},#{f13},#{f14},#{f15},#{f16},#{f17},#{f18},#{f19},#{f20},
+                #{f21},#{f22},#{f23},#{f24},#{f25},#{f26},#{f27},#{f28},#{f29},#{f30},
+                #{f31},#{f32},#{f33},#{f34},#{f35},#{f36},#{f37},#{f38},#{f39},#{f40},
+                #{f41},#{f42},#{f43},#{f44},#{f45},#{f46},#{f47},#{f48},#{f49},#{f50},
+                #{f51},#{f52},#{f53},#{f54},#{f55},#{f56},#{f57},#{f58},#{f59},#{f60},
+                #{f61},#{f62},#{f63},#{f64},#{f65},#{f66},#{f67},#{f68},#{f69},#{f70},
+                #{f71},#{f72},#{f73},#{f74},#{f75},#{f76},#{f77},#{f78},#{f79},#{f80},
+                #{f81},#{f82},#{f83},#{f84},#{f85},#{f86},#{f87},#{f88},#{f89},#{f90},
+                #{f91},#{f92},#{f93},#{f94},#{f95},#{f96},#{f97},#{f98},#{f99},#{f100},
+                #{f101},#{f102},#{f103},#{f104},#{f105},#{f106},#{f107},#{f108},#{f109},
+                #{f110},#{f111},#{f112},#{f113},#{f114},#{f115},#{f116},#{f117},#{f118},#{f119},
+                #{f120},#{f121},#{f122},#{f123},#{f124},#{f125},#{f126},#{f127},#{f128},#{f129},
+                #{f130},#{f131},#{f132},#{f133},#{f134},#{f135},#{f136},#{f137},#{f138},#{f139},
+                #{f140},#{f141},#{f142},#{f143},#{f144},#{f145},#{f146},#{f147},#{f148},#{f149},
+                #{f150}
+        )
+    </insert>
+
+    <update id="updateByProjectContent"  parameterType="ProjectContent" >
+        UPDATE wz_project_content
+        SET
+            project_metadata_id=#{project_metadata_id},
+            f1=#{f1},            f2=#{f2},            f3=#{f3},            f4=#{f4},            f5=#{f5},
+            f6=#{f6},            f7=#{f7},            f8=#{f8},            f9=#{f9},            f10=#{f10},
+            f11=#{f11},            f12=#{f12},            f13=#{f13},            f14=#{f14},            f15=#{f15},
+            f16=#{f16},            f17=#{f17},            f18=#{f18},            f19=#{f19},            f20=#{f20},
+            f21=#{f21},            f22=#{f22},            f23=#{f23},            f24=#{f24},            f25=#{f25},
+            f26=#{f26},            f27=#{f27},            f28=#{f28},            f29=#{f29},            f30=#{f30},
+            f31=#{f31},            f32=#{f32},            f33=#{f33},            f34=#{f34},            f35=#{f35},
+            f36=#{f36},            f37=#{f37},            f38=#{f38},            f39=#{f39},            f40=#{f40},
+            f41=#{f41},            f42=#{f42},            f43=#{f43},            f44=#{f44},            f45=#{f45},
+            f46=#{f46},            f47=#{f47},            f48=#{f48},            f49=#{f49},            f50=#{f50},
+            f51=#{f51},            f52=#{f52},            f53=#{f53},            f54=#{f54},            f55=#{f55},
+            f56=#{f56},            f57=#{f57},            f58=#{f58},            f59=#{f59},            f60=#{f60},
+            f61=#{f61},            f62=#{f62},            f63=#{f63},            f64=#{f64},            f65=#{f65},
+            f66=#{f66},            f67=#{f67},            f68=#{f68},            f69=#{f69},            f70=#{f70},
+            f71=#{f71},            f72=#{f72},            f73=#{f73},            f74=#{f74},            f75=#{f75},
+            f76=#{f76},            f77=#{f77},            f78=#{f78},            f79=#{f79},            f80=#{f80},
+            f81=#{f81},            f82=#{f82},            f83=#{f83},            f84=#{f84},            f85=#{f85},
+            f86=#{f86},            f87=#{f87},            f88=#{f88},            f89=#{f89},            f90=#{f90},
+            f91=#{f91},            f92=#{f92},            f93=#{f93},            f94=#{f94},            f95=#{f95},
+            f96=#{f96},            f97=#{f97},            f98=#{f98},            f99=#{f99},            f100=#{f100},
+            f101=#{f101},            f102=#{f102},            f103=#{f103},            f104=#{f104},            f105=#{f105},
+            f106=#{f106},            f107=#{f107},            f108=#{f108},            f109=#{f109},            f110=#{f110},
+            f111=#{f111},            f112=#{f112},            f113=#{f113},            f114=#{f114},            f115=#{f115},
+            f116=#{f116},            f117=#{f117},            f118=#{f118},            f119=#{f119},            f120=#{f120},
+            f121=#{f121},            f122=#{f122},            f123=#{f123},            f124=#{f124},            f125=#{f125},
+            f126=#{f126},            f127=#{f127},            f128=#{f128},            f129=#{f129},            f130=#{f130},
+            f131=#{f131},            f132=#{f132},            f133=#{f133},            f134=#{f134},            f135=#{f135},
+            f136=#{f136},            f137=#{f137},            f138=#{f138},            f139=#{f139},            f140=#{f140},
+            f141=#{f141},            f142=#{f142},            f143=#{f143},            f144=#{f144},            f145=#{f145},
+            f146=#{f146},            f147=#{f147},            f148=#{f148},            f149=#{f149},            f150=#{f150}
+            where id = #{id}
+    </update>
+
+</mapper>

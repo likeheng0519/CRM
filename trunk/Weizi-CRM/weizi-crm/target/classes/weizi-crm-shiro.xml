@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"
+	default-lazy-init="true">
+
+	<description>Shiro security configuration</description>
+
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="shiroDbRealm" />
+        <property name="sessionManager" ref="sessionManager" />
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+	</bean>
+
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionDAO" ref="sessionDAO" />
+    </bean>
+
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO" />
+
+    <bean id="shiroDbRealm" class="cn.com.conversant.weizi.crm.api.shiro.ShiroDbRealm"
+          depends-on="userDao">
+        <property name="userService" ref="userService"/>
+        <!--<property name="permissionService" ref="permissionService"/>-->
+	</bean>
+
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login" />
+        <property name="unauthorizedUrl" value="/login" />
+        <property name="successUrl" value="/index" />
+        <property name="filterChainDefinitions">
+            <value>
+                /user/login = anon
+                /user/** = user
+                /appeal/** = user
+                /** = anon
+            </value>
+        </property>
+    </bean>
+
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:ehcache/ehcache-shiro.xml"/>
+	</bean>
+
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <bean
+            class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+            depends-on="lifecycleBeanPostProcessor" />
+    <bean
+            class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
+    </bean>
+</beans>

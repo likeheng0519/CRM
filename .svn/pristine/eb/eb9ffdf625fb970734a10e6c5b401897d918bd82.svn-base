@@ -1,0 +1,2 @@
+jdbc.driver=org.postgresql.Driver
+scms.jdbc.url=jdbc:postgresql://${scms.database.server.host}:${scms.database.server.port}/${scms.databases.name}

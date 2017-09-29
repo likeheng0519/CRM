@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.UserDao" >
+  <resultMap id="user_map" type="cn.com.conversant.weizi.crm.api.entity.User" >
+    <id column="id" property="id" />
+    <result column="username" property="username" />
+    <result column="password" property="password" />
+    <result column="user_type" property="userType" />
+    <result column="created" property="created" />
+    <result column="updated" property="updated" />
+  </resultMap>
+
+  <sql id="table_column_list" >
+    id, username, password, user_type, created, updated
+  </sql>
+
+  <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+    insert into wz_user(username, password, user_type, created, updated)
+    values(#{username},#{password},#{userType},#{created},#{updated})
+  </insert>
+
+    <delete id="deleteById" parameterType="_long">
+        delete from wz_user where id=#{userId}
+    </delete>
+
+  <select id="getUserByType" resultMap="user_map" parameterType="_int" >
+    select
+    <include refid="table_column_list" />
+    from wz_user
+    where user_type = #{type} order by id
+  </select>
+
+    <select id="getUserByNotType" resultMap="user_map" parameterType="_int" >
+        select
+        <include refid="table_column_list" />
+        from wz_user
+        where user_type != #{type} order by id
+    </select>
+
+  <select id="getUserByName" resultMap="user_map" parameterType="String" >
+    select
+    <include refid="table_column_list" />
+    from wz_user
+    where lower(username) = #{username}
+  </select>
+
+    <select id="getUserById" resultMap="user_map" parameterType="_long" >
+        select
+        <include refid="table_column_list" />
+        from wz_user
+        where id = #{userId}
+    </select>
+
+    <select id="list" resultMap="user_map">
+        select
+        <include refid="table_column_list" />
+        from wz_user order by id
+        <if test="offset > -1 and length > 0">
+            LIMIT #{length} OFFSET #{offset}
+        </if>
+    </select>
+
+    <select id="getUserTotalCount" resultType="_int">
+        select
+        count(id)
+        from wz_user
+    </select>
+
+    <select id="searchUser" resultMap="user_map">
+        select
+        <include refid="table_column_list" />
+        from wz_user
+        where 1=1
+        <if test="searchKey !=null">
+            And username like CONCAT('%',#{searchKey},'%')
+        </if>
+        order by id
+        <if test="offset > -1 and length > 0">
+            LIMIT #{length} OFFSET #{offset}
+        </if>
+    </select>
+
+    <select id="getSearchUserTotalCount" resultType="_int">
+        select
+        count(id)
+        from wz_user
+        where 1=1
+        <if test="searchKey !=null">
+            And username like CONCAT('%',#{searchKey},'%')
+        </if>
+    </select>
+
+    <update id="update" parameterType="User">
+        update wz_user
+        set password = #{password}, user_type = #{userType}, updated = now()
+        where id = #{id};
+    </update>
+</mapper>

@@ -1,0 +1,11 @@
+scms.database.server.host=192.168.1.23
+scms.database.server.port=5432
+scms.databases.name=weizi.crm
+scms.jdbc.username=postgres
+scms.jdbc.password=conversant
+
+#content.storage.base=E:/Weizi.CRM/trunk/Weizi-CRM/weizi-crm/src/main/webapp/media/
+#project.context.image.dir=E:/Weizi.CRM/trunk/Weizi-CRM/weizi-crm/src/main/webapp/media/
+
+content.storage.base=E:/Weizi.CRM/trunk/Weizi-CRM/weizi-crm/src/main/webapp/media/
+project.context.image.dir=E:/Weizi.CRM/trunk/Weizi-CRM/weizi-crm/src/main/webapp/media/

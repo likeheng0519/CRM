@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.conversant.weizi.crm.api.dao.ProjectSearchConditionDao" >
+    <resultMap id="wz_search_condition_map" type="cn.com.conversant.weizi.crm.api.entity.ProjectSearchCondition" >
+        <id column="id" property="id" />
+        <id column="project_metadata_id" property="project_metadata_id" />
+        <id column="field1_title" property="field1_title" />
+        <id column="field1" property="field1" />
+        <id column="field1_type" property="field1_type" />
+        <id column="field2_title" property="field2_title" />
+        <id column="field2" property="field2" />
+        <id column="field2_type" property="field2_type" />
+        <id column="field3_title" property="field3_title" />
+        <id column="field3" property="field3" />
+        <id column="field3_type" property="field3_type" />
+        <id column="field4_title" property="field4_title" />
+        <id column="field4" property="field4" />
+        <id column="field4_type" property="field4_type" />
+        <id column="field5_title" property="field5_title" />
+        <id column="field5" property="field5" />
+        <id column="field5_type" property="field5_type" />
+        <id column="created" property="created" />
+        <id column="updated" property="updated" />
+
+    </resultMap>
+    <sql id="table_column_list" >
+        id,project_metadata_id,
+        field1_title,field1,field1_type,
+        field2_title,field2,field2_type,
+        field3_title,field3,field3_type,
+        field4_title,field4,field4_type,
+        field5_title,field5,field5_type,
+        created,updated
+    </sql>
+
+    <select id="getProjectSearchConditionByMetaId" resultMap="wz_search_condition_map" parameterType="java.lang.Long" >
+        select
+        <include refid="table_column_list" />
+        from wz_project_search_condition
+        where project_metadata_id = #{metadataId}
+    </select>
+
+    <select id="getCountByMetadataId"  resultType="int" parameterType="java.lang.Long" >
+        select
+        COUNT (1)
+        from wz_project_search_condition
+        where project_metadata_id = #{metadataId}
+    </select>
+
+    <select id="deleteByMetadataId"  parameterType="java.lang.Long" >
+        DELETE
+        from wz_project_search_condition
+        where project_metadata_id = #{metadataId}
+    </select>
+
+    <insert id="addSearchCondition"  parameterType="ProjectSearchCondition" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wz_project_search_condition
+        (   project_metadata_id,
+            field1_title,field1,field1_type,
+            field2_title,field2,field2_type,
+            field3_title,field3,field3_type,
+            field4_title,field4,field4_type,
+            field5_title,field5,field5_type,
+            created,updated
+        )
+        VALUES (#{project_metadata_id},
+                #{field1_title},            #{field1},            #{field1_type},
+                #{field2_title},            #{field2},            #{field2_type},
+                #{field3_title},            #{field3},            #{field3_type},
+                #{field4_title},            #{field4},            #{field4_type},
+                #{field5_title},            #{field5},            #{field5_type},
+                now(),                 now()
+              )
+    </insert>
+
+    <update id="updateBySearchCondition"    parameterType="ProjectSearchCondition" >
+        UPDATE wz_project_search_condition
+        SET
+        <if test="field1 !=null and field1 !=''">
+            field1_title=#{field1_title},
+            field1=#{field1},
+            field1_type=#{field1_type},
+        </if>
+        <if test="field2 !=null and field2 !=''">
+            field2_title=#{field2_title},
+            field2=#{field2},
+            field2_type=#{field2_type},
+        </if>
+        <if test="field3 !=null and field3 !=''">
+            field3_title=#{field3_title},
+            field3=#{field3},
+            field3_type=#{field3_type},
+        </if>
+        <if test="field4 !=null and field4 !=''">
+            field4_title=#{field4_title},
+            field4=#{field4},
+            field4_type=#{field4_type},
+        </if>
+        <if test="field5 !=null and field5 !=''">
+            field5_title=#{field5_title},
+            field5=#{field5},
+            field5_type=#{field5_type},
+        </if>
+            updated=now()
+        where project_metadata_id=#{project_metadata_id}
+    </update>
+
+
+</mapper>

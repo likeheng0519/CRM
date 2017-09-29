@@ -1,0 +1,94 @@
+#!/bin/bash
+safemkdir(){
+  if [ ! -d $1 ] ; then
+    mkdir -p $1
+  fi
+}
+
+create_link(){
+
+  if [ ! -d $STORAGE_HOME ]; then
+    echo "Error : Storage home $STORAGE_HOME doesn't exist"
+  fi
+
+  rm -fr ./../webapps/ftp
+  ln -fbs /opt/ftproot   ./../webapps/ftp
+
+  rm -fr ./../webapps/media
+  ln -fbs /opt/storage-crm/media   ./../webapps/media
+
+  rm -fr /opt/thumbnail
+  mkdir -p /opt/thumbnail
+}
+
+cd `dirname $0`
+#these values can be define in projectrc
+source ./env.conf
+
+DATA_HOME=$APP_HOME/data
+TEMP_HOME=$DATA_HOME/tmp
+JETTY_RUN=$TEMP_HOME
+#
+JETTY_ARGS="lib=$JETTY_HOME/lib $APP_HOME/conf/jetty/jetty.xml $APP_HOME/conf/jetty/jetty-requestlog.xml"
+
+JAVA_OPTIONS="-server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$LOG_HOME -Xms512M -Xmx512M -XX:NewSize=256m -XX:MaxNewSize=256m"
+
+if [ "$REMOTE_DEBUG" == "true" ]; then
+  JAVA_OPTIONS="-Xdebug -Xrunjdwp:transport=dt_socket,address=$REMOTE_PORT,server=y,suspend=n $JAVA_OPTIONS"
+fi
+
+TMP=$TEMP_HOME
+TMPDIR=$TEMP_HOME
+dateFormat=$(date '+%Y-%m-%d');
+
+machine_name=$(hostname)
+JAVA_OPTIONS="-Xbootclasspath/a:$APP_HOME/conf/  -XX:ErrorFile=$LOG_HOME/hs_err_pid%p.log $JAVA_OPTIONS -Dos.hostname=$machine_name  -Dproject.env=$PROJECT_ENV -Djetty.https.port=$JETTY_SECURE_PORT -Dproject.home=$APP_HOME -Djetty.logs=$LOG_HOME/$dateFormat -Dlog.home=$LOG_HOME -Dlogback.configurationFile=$APP_HOME/conf/logback.xml"
+CMD="$JETTY_HOME/bin/jetty.sh $1 $APP_HOME/conf/jetty/jetty.xml  "
+
+#these values be used in jetty's jetty.sh
+export JAVA_HOME JAVA_OPTIONS JETTY_PORT JETTY_HOME TMP TMPDIR JETTY_ARGS JETTY_RUN
+
+
+safemkdir $LOG_HOME
+safemkdir $TEMP_HOME
+safemkdir $JETTY_RUN
+safemkdir  $LOG_HOME/$dateFormat
+safemkdir $REPORT_LOG_HOME
+
+
+started="#################################################################\n
+                SwiftCMS SCMS Started At  $(date)                     \n
+        #################################################################\n"
+
+stoped="#################################################################\n
+               SwiftCMS SCMS Stopping At  $(date)                     \n
+        ###################################################################\n"
+
+if [ "$1" == "start" ]
+  then
+   create_link
+    echo $CMD | tee -a $LOG_HOME/$dateFormat/scms_trace.log
+    echo -e $started | tee -a $LOG_HOME/$dateFormat/scms_trace.log
+    $CMD 1>>$LOG_HOME/$dateFormat/scms_trace.log 2>>$LOG_HOME/$dateFormat/scms_error.log
+
+    sleep 5
+    tail -n 300 $LOG_HOME/$dateFormat/scms_trace.log
+
+ else if [ "$1" == "log" ]
+    then if [ "$2" == "error" ]
+      then
+       tail -f $LOG_HOME/$dateFormat/scms-error.log
+      else
+       tail -f $LOG_HOME/$dateFormat/scms_trace.log
+       fi
+
+ else if [ "$1" == "stop" ]
+    then
+     echo -e $stoped | tee -a $LOG_HOME/$dateFormat/scms_trace.log
+    $CMD
+ else
+   $CMD
+    fi
+   fi
+fi
+
